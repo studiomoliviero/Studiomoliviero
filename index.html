@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Studio Oliviero — Dottore Commercialista | Serravalle Scrivia</title>
+  <meta name="description" content="Studio Oliviero – Dottore Commercialista e Revisore Legale. Consulenza fiscale, societaria e del lavoro a Serravalle Scrivia (AL) e dintorni." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy: #1a2133; --navy-deep: #111827; --gold: #b8975a; --gold-light: #d4b483;
+      --cream: #f7f4ef; --warm-white: #fdfbf8; --text: #2c2c2c; --muted: #7a7a72; --border: #e0dbd2;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Jost', sans-serif; font-weight: 300; background: var(--warm-white); color: var(--text); font-size: 16px; line-height: 1.7; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,251,248,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 68px; transition: box-shadow 0.3s; }
+    nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
+    .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--navy); letter-spacing: 0.02em; text-decoration: none; }
+    .nav-logo span { color: var(--gold); }
+    .nav-links { display: flex; gap: 2rem; list-style: none; }
+    .nav-links a { text-decoration: none; color: var(--text); font-size: 0.82rem; letter-spacing: 0.08em; text-transform: uppercase; font-weight: 400; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--gold); }
+    .nav-cta { background: var(--navy); color: #fff !important; padding: 0.5rem 1.2rem; border-radius: 2px; }
+    .nav-cta:hover { background: var(--gold) !important; color: #fff !important; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+    .hamburger span { display: block; width: 24px; height: 1.5px; background: var(--navy); transition: 0.3s; }
+    .mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; bottom: 0; background: var(--warm-white); z-index: 99; padding: 2rem 5%; flex-direction: column; gap: 1.5rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { text-decoration: none; color: var(--text); font-size: 1.1rem; font-weight: 400; letter-spacing: 0.05em; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+    .mobile-menu a:hover { color: var(--gold); }
+    #home { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 5% 8rem; background: var(--navy-deep); position: relative; overflow: hidden; }
+    .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(184,151,90,0.12) 0%, transparent 60%), linear-gradient(160deg, #1a2133 0%, #0d1320 60%, #111827 100%); }
+    .hero-line { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), transparent); opacity: 0.6; }
+    .hero-pattern { position: absolute; inset: 0; opacity: 0.03; background-image: repeating-linear-gradient(0deg, #fff 0px, #fff 1px, transparent 1px, transparent 60px), repeating-linear-gradient(90deg, #fff 0px, #fff 1px, transparent 1px, transparent 60px); }
+    .hero-content { position: relative; z-index: 1; max-width: 820px; }
+    .hero-eyebrow { font-size: 0.75rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+    .hero-eyebrow::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+    .hero-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 300; color: #fff; line-height: 1.1; margin-bottom: 1.5rem; }
+    .hero-title em { font-style: italic; color: var(--gold-light); }
+    .hero-sub { color: rgba(255,255,255,0.55); font-size: 1rem; max-width: 520px; line-height: 1.8; margin-bottom: 2.5rem; }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn-primary { background: var(--gold); color: #fff; padding: 0.85rem 2rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 500; transition: background 0.25s, transform 0.2s; display: inline-block; }
+    .btn-primary:hover { background: var(--gold-light); transform: translateY(-1px); }
+    .btn-ghost { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.75); padding: 0.85rem 2rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; transition: border-color 0.25s, color 0.25s; display: inline-block; }
+    .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+    section { padding: 6rem 5%; }
+    .section-eyebrow { font-size: 0.72rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 0.75rem; }
+    .section-title { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 300; color: var(--navy); line-height: 1.2; margin-bottom: 1.5rem; }
+    .section-title em { font-style: italic; color: var(--gold); }
+    .divider { width: 50px; height: 2px; background: var(--gold); margin-bottom: 2rem; }
+    .lead { font-size: 1.05rem; color: var(--muted); max-width: 640px; line-height: 1.9; }
+    .strip { background: var(--navy); padding: 3rem 5%; display: flex; gap: 3rem; flex-wrap: wrap; justify-content: center; }
+    .strip-item { text-align: center; flex: 1; min-width: 160px; max-width: 200px; }
+    .strip-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold); line-height: 1; }
+    .strip-label { color: rgba(255,255,255,0.55); font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.4rem; }
+    #servizi { background: var(--cream); }
+    .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5px; margin-top: 3rem; background: var(--border); }
+    .service-card { background: var(--warm-white); padding: 2.5rem; transition: background 0.25s; }
+    .service-card:hover { background: #fff; }
+    .service-icon { width: 44px; height: 44px; margin-bottom: 1.5rem; background: var(--navy); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1.2rem; }
+    .service-title { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 400; color: var(--navy); margin-bottom: 0.75rem; line-height: 1.3; }
+    .service-text { font-size: 0.9rem; color: var(--muted); line-height: 1.8; }
+    .service-list { margin-top: 0.8rem; list-style: none; }
+    .service-list li { font-size: 0.82rem; color: var(--muted); padding: 0.2rem 0; padding-left: 1rem; position: relative; }
+    .service-list li::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+    #studio { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+    .studio-photo-placeholder { width: 100%; aspect-ratio: 3/4; max-height: 520px; background: linear-gradient(135deg, var(--navy) 0%, #243050 100%); display: flex; align-items: center; justify-content: center; color: rgba(255,255,255,0.2); font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; letter-spacing: 0.1em; position: relative; overflow: hidden; }
+    .studio-photo-placeholder::after { content: 'M.O.'; position: absolute; font-size: 6rem; opacity: 0.06; bottom: -1rem; right: 1rem; }
+    .studio-badge { position: absolute; bottom: -1.5rem; right: -1.5rem; background: var(--gold); color: #fff; padding: 1.5rem; text-align: center; width: 120px; }
+    .studio-badge strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; }
+    .studio-badge span { font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase; }
+    .studio-visual { position: relative; }
+    .studio-text blockquote { border-left: 2px solid var(--gold); padding-left: 1.5rem; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.15rem; color: var(--navy); margin: 2rem 0; line-height: 1.7; }
+    .credentials { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 2rem; }
+    .credential-tag { border: 1px solid var(--border); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.35rem 0.75rem; color: var(--muted); }
+    #staff { background: var(--cream); }
+    .staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .staff-card { text-align: center; }
+    .staff-photo { width: 100%; aspect-ratio: 1/1; background: linear-gradient(135deg, #e8e4dc, #d4cfc5); margin-bottom: 1.2rem; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 2.5rem; color: var(--muted); font-weight: 300; max-width: 200px; margin-left: auto; margin-right: auto; }
+    .staff-name { font-family: 'Cormorant Garamond', serif; font-size: 1.15rem; font-weight: 600; color: var(--navy); }
+    .staff-role { font-size: 0.78rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-top: 0.2rem; }
+    .staff-bio { font-size: 0.85rem; color: var(--muted); margin-top: 0.75rem; line-height: 1.7; }
+    #perche { background: var(--navy-deep); color: #fff; }
+    #perche .section-title { color: #fff; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 3rem; }
+    .why-card { border: 1px solid rgba(255,255,255,0.08); padding: 2rem; transition: border-color 0.3s; }
+    .why-card:hover { border-color: var(--gold); }
+    .why-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold); opacity: 0.4; line-height: 1; }
+    .why-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #fff; margin-top: 0.5rem; margin-bottom: 0.75rem; }
+    .why-text { font-size: 0.88rem; color: rgba(255,255,255,0.5); line-height: 1.8; }
+    #contatti { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+    .contact-info-item { display: flex; gap: 1.2rem; margin-bottom: 1.8rem; align-items: flex-start; }
+    .contact-icon { width: 36px; height: 36px; flex-shrink: 0; background: var(--cream); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1rem; margin-top: 2px; }
+    .contact-label { font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); }
+    .contact-value { font-size: 0.95rem; color: var(--text); margin-top: 0.2rem; }
+    .contact-value a { color: var(--text); text-decoration: none; }
+    .contact-value a:hover { color: var(--gold); }
+    .orari-table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+    .orari-table td { padding: 0.5rem 0; font-size: 0.88rem; border-bottom: 1px solid var(--border); }
+    .orari-table td:first-child { color: var(--muted); width: 50%; }
+    .contact-form { background: var(--cream); padding: 2.5rem; }
+    .form-group { margin-bottom: 1.2rem; }
+    .form-group label { display: block; font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 0.4rem; }
+    .form-group input, .form-group select, .form-group textarea { width: 100%; border: 1px solid var(--border); background: #fff; padding: 0.75rem 1rem; font-family: 'Jost', sans-serif; font-size: 0.9rem; color: var(--text); outline: none; transition: border-color 0.2s; -webkit-appearance: none; }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); }
+    .form-group textarea { resize: vertical; min-height: 110px; }
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+    .btn-submit { background: var(--navy); color: #fff; border: none; padding: 0.9rem 2.5rem; font-family: 'Jost', sans-serif; font-size: 0.78rem; letter-spacing: 0.12em; text-transform: uppercase; cursor: pointer; transition: background 0.25s; width: 100%; font-weight: 500; }
+    .btn-submit:hover { background: var(--gold); }
+    .form-note { font-size: 0.72rem; color: var(--muted); margin-top: 0.75rem; text-align: center; }
+    .map-embed { margin-top: 2rem; }
+    .map-embed iframe { width: 100%; height: 220px; border: none; filter: grayscale(30%); }
+    footer { background: var(--navy-deep); color: rgba(255,255,255,0.4); padding: 2.5rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(184,151,90,0.2); }
+    .footer-brand { font-family: 'Cormorant Garamond', serif; color: rgba(255,255,255,0.7); font-size: 1rem; }
+    .footer-links { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .footer-links a { color: rgba(255,255,255,0.35); font-size: 0.75rem; text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { font-size: 0.72rem; }
+    #toast { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; background: var(--navy); color: #fff; padding: 1rem 1.5rem; font-size: 0.85rem; transform: translateY(100px); opacity: 0; transition: all 0.4s; border-left: 3px solid var(--gold); pointer-events: none; }
+    #toast.show { transform: translateY(0); opacity: 1; }
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+    @media (max-width: 900px) { #studio, #contatti { grid-template-columns: 1fr; gap: 3rem; } .studio-badge { right: 0; bottom: -1rem; } .form-grid { grid-template-columns: 1fr; } .nav-links { display: none; } .hamburger { display: flex; } }
+    @media (max-width: 600px) { #home { padding-bottom: 5rem; } section { padding: 4rem 5%; } .strip { gap: 2rem; padding: 2.5rem 5%; } }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <a href="#home" class="nav-logo">Studio <span>Oliviero</span></a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#servizi">Servizi</a></li>
+    <li><a href="#studio">Lo Studio</a></li>
+    <li><a href="#staff">Staff</a></li>
+    <li><a href="#perche">Perché noi</a></li>
+    <li><a href="#contatti" class="nav-cta">Contatti</a></li>
+  </ul>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#servizi" onclick="closeMenu()">Servizi</a>
+  <a href="#studio" onclick="closeMenu()">Lo Studio</a>
+  <a href="#staff" onclick="closeMenu()">Staff</a>
+  <a href="#perche" onclick="closeMenu()">Perché noi</a>
+  <a href="#contatti" onclick="closeMenu()">Contatti</a>
+</div>
+<section id="home">
+  <div class="hero-bg"></div>
+  <div class="hero-line"></div>
+  <div class="hero-pattern"></div>
+  <div class="hero-content">
+    <div class="hero-eyebrow">Dottore Commercialista &amp; Revisore Legale</div>
+    <h1 class="hero-title">Professionalità<br>al servizio<br>della <em>vostra impresa</em></h1>
+    <p class="hero-sub">Lo Studio Oliviero affianca privati, professionisti e aziende nella gestione fiscale, societaria e del lavoro — con un approccio rigoroso e una consulenza su misura.</p>
+    <div class="hero-actions">
+      <a href="#contatti" class="btn-primary">Richiedi una consulenza</a>
+      <a href="#servizi" class="btn-ghost">Scopri i servizi</a>
+    </div>
+  </div>
+</section>
+<div class="strip">
+  <div class="strip-item fade-in"><div class="strip-num">20+</div><div class="strip-label">Anni di esperienza</div></div>
+  <div class="strip-item fade-in"><div class="strip-num">300+</div><div class="strip-label">Clienti seguiti</div></div>
+  <div class="strip-item fade-in"><div class="strip-num">3</div><div class="strip-label">Professionisti</div></div>
+  <div class="strip-item fade-in"><div class="strip-num">AL</div><div class="strip-label">Provincia di Alessandria</div></div>
+</div>
+<section id="servizi">
+  <div class="section-eyebrow fade-in">Aree di competenza</div>
+  <h2 class="section-title fade-in">I nostri <em>servizi</em></h2>
+  <div class="divider fade-in"></div>
+  <p class="lead fade-in">Un'offerta completa e integrata per accompagnare ogni cliente nelle decisioni più rilevanti — dalla dichiarazione dei redditi alle operazioni straordinarie.</p>
+  <div class="services-grid">
+    <div class="service-card fade-in"><div class="service-icon">✦</div><div class="service-title">Fiscalità e Dichiarazioni</div><p class="service-text">Assistenza completa nella gestione degli adempimenti tributari per persone fisiche, ditte individuali e società.</p><ul class="service-list"><li>Dichiarazioni dei redditi (730, Redditi PF/SP/SC)</li><li>IVA e liquidazioni periodiche</li><li>IMU, IVIE, IVAFE</li><li>Consulenza fiscale continuativa</li></ul></div>
+    <div class="service-card fade-in"><div class="service-icon">⬡</div><div class="service-title">Contabilità e Bilancio</div><p class="service-text">Tenuta della contabilità ordinaria e semplificata, redazione del bilancio d'esercizio e adempimenti correlati.</p><ul class="service-list"><li>Contabilità ordinaria e semplificata</li><li>Bilancio civilistico e fiscale</li><li>Nota integrativa e relazioni</li><li>Deposito bilanci al Registro Imprese</li></ul></div>
+    <div class="service-card fade-in"><div class="service-icon">◈</div><div class="service-title">Consulenza Societaria</div><p class="service-text">Supporto nella costituzione, gestione e trasformazione di società. Pianificazione strategica e operazioni straordinarie.</p><ul class="service-list"><li>Costituzione di società (SRL, SPA, SNC, SAS)</li><li>Fusioni, scissioni, trasformazioni</li><li>Patti parasociali e governance</li><li>Due diligence fiscale</li></ul></div>
+    <div class="service-card fade-in"><div class="service-icon">◉</div><div class="service-title">Lavoro e Paghe</div><p class="service-text">Gestione del personale dipendente, elaborazione cedolini e consulenza giuslavoristica per aziende di ogni dimensione.</p><ul class="service-list"><li>Elaborazione buste paga</li><li>Contratti di assunzione e cessazione</li><li>CU, 770, IRAP lavoro</li><li>Consulenza su CCNL applicabili</li></ul></div>
+    <div class="service-card fade-in"><div class="service-icon">▲</div><div class="service-title">Revisione Legale</div><p class="service-text">Incarichi di revisione dei conti e sindaco effettivo in società soggette a controllo legale dei conti.</p><ul class="service-list"><li>Revisione dei conti annuali</li><li>Sindaco effettivo e supplente</li><li>Revisore enti del terzo settore</li><li>Relazioni al bilancio</li></ul></div>
+    <div class="service-card fade-in"><div class="service-icon">◇</div><div class="service-title">Privati e Patrimonio</div><p class="service-text">Pianificazione fiscale e patrimoniale per privati, successioni, donazioni e gestione degli investimenti personali.</p><ul class="service-list"><li>Successioni e dichiarazioni di successione</li><li>Pianificazione patrimoniale</li><li>Quadro RW e monitoraggio fiscale</li><li>Agevolazioni prima casa e ristrutturazioni</li></ul></div>
+  </div>
+</section>
+<section>
+  <div id="studio">
+    <div class="studio-visual fade-in">
+      <div class="studio-photo-placeholder">M.O.</div>
+      <div class="studio-badge"><strong>20+</strong><span>anni di<br>esperienza</span></div>
+    </div>
+    <div class="studio-text">
+      <div class="section-eyebrow fade-in">Lo Studio</div>
+      <h2 class="section-title fade-in">Marco <em>Oliviero</em></h2>
+      <div class="divider fade-in"></div>
+      <p class="fade-in" style="color:var(--muted);line-height:1.9;">Dottore Commercialista e Revisore Legale iscritto all'Ordine dei Dottori Commercialisti e degli Esperti Contabili di Alessandria, Marco Oliviero opera a Serravalle Scrivia dal cuore del Piemonte meridionale, prestando assistenza a imprenditori, società e privati in tutta la provincia e nelle aree limitrofe.</p>
+      <blockquote class="fade-in">"Ogni cliente è una realtà unica. Il mio compito è comprenderne a fondo le esigenze e offrire soluzioni concrete, non formule standard."</blockquote>
+      <p class="fade-in" style="color:var(--muted);line-height:1.9;">Laureato in Economia e Commercio, ha maturato una solida esperienza tanto nella consulenza ordinaria quanto nelle operazioni più complesse, mantenendo sempre un rapporto diretto e accessibile con la propria clientela.</p>
+      <div class="credentials fade-in">
+        <span class="credential-tag">ODCEC Alessandria</span>
+        <span class="credential-tag">Revisore Legale</span>
+        <span class="credential-tag">Registro MEF</span>
+        <span class="credential-tag">CAF Convenzionato</span>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="staff">
+  <div class="section-eyebrow fade-in">Il team</div>
+  <h2 class="section-title fade-in">Il nostro <em>staff</em></h2>
+  <div class="divider fade-in"></div>
+  <p class="lead fade-in">Professionisti qualificati che lavorano in sinergia per garantire risposte rapide e competenti in ogni area di specializzazione.</p>
+  <div class="staff-grid">
+    <div class="staff-card fade-in"><div class="staff-photo">M.O.</div><div class="staff-name">Dott. Marco Oliviero</div><div class="staff-role">Titolare — Dottore Commercialista</div><p class="staff-bio">Consulenza fiscale, societaria e revisione legale. Referente principale per le questioni straordinarie e la pianificazione patrimoniale.</p></div>
+    <div class="staff-card fade-in"><div class="staff-photo">C.R.</div><div class="staff-name">Collaboratore</div><div class="staff-role">Consulente del Lavoro</div><p class="staff-bio">Specializzato nella gestione del personale, elaborazione paghe, contrattualistica e adempimenti contributivi.</p></div>
+    <div class="staff-card fade-in"><div class="staff-photo">A.M.</div><div class="staff-name">Collaboratrice</div><div class="staff-role">Contabilità e Adempimenti</div><p class="staff-bio">Tenuta della contabilità, dichiarazioni fiscali e gestione degli adempimenti periodici per i clienti dello studio.</p></div>
+  </div>
+</section>
+<section id="perche">
+  <div class="section-eyebrow fade-in" style="color:var(--gold-light);">Il vantaggio</div>
+  <h2 class="section-title fade-in">Perché scegliere <em>lo Studio Oliviero</em></h2>
+  <div class="divider fade-in"></div>
+  <div class="why-grid">
+    <div class="why-card fade-in"><div class="why-num">01</div><div class="why-title">Presenza locale, visione ampia</div><p class="why-text">Radicati nel territorio di Serravalle Scrivia e nell'Alessandrino, conosciamo le specificità delle realtà produttive locali senza perdere di vista il quadro normativo nazionale.</p></div>
+    <div class="why-card fade-in"><div class="why-num">02</div><div class="why-title">Interlocutore unico</div><p class="why-text">Un solo punto di riferimento per fisco, lavoro, bilancio e questioni societarie. Nessun rimbalzo tra diversi professionisti, nessuna perdita di informazioni.</p></div>
+    <div class="why-card fade-in"><div class="why-num">03</div><div class="why-title">Aggiornamento continuo</div><p class="why-text">La normativa fiscale cambia rapidamente. Lo Studio garantisce formazione costante e un monitoraggio proattivo delle novità legislative che possono interessare i clienti.</p></div>
+    <div class="why-card fade-in"><div class="why-num">04</div><div class="why-title">Risposta rapida</div><p class="why-text">Le esigenze del cliente non aspettano. Ci impegniamo a rispondere alle richieste in tempi certi, con un canale diretto e una comunicazione chiara e accessibile.</p></div>
+  </div>
+</section>
+<section>
+  <div id="contatti">
+    <div>
+      <div class="section-eyebrow fade-in">Dove siamo</div>
+      <h2 class="section-title fade-in">Vieni a <em>trovarci</em></h2>
+      <div class="divider fade-in"></div>
+      <div class="contact-info-item fade-in"><div class="contact-icon">📍</div><div><div class="contact-label">Indirizzo</div><div class="contact-value">Via [Da completare], 00<br>15069 Serravalle Scrivia (AL)</div></div></div>
+      <div class="contact-info-item fade-in"><div class="contact-icon">📞</div><div><div class="contact-label">Telefono</div><div class="contact-value"><a href="tel:+390143000000">0143 000 000</a></div></div></div>
+      <div class="contact-info-item fade-in"><div class="contact-icon">✉</div><div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:info@studiooliviero.it">info@studiooliviero.it</a></div></div></div>
+      <div class="contact-info-item fade-in"><div class="contact-icon">⏱</div><div><div class="contact-label">Orari di ricevimento</div><table class="orari-table" style="margin-top:0.5rem"><tr><td>Lunedì – Venerdì</td><td>9:00 – 12:30 / 14:30 – 18:00</td></tr><tr><td>Sabato</td><td>9:00 – 12:00 (su appuntamento)</td></tr><tr><td>Domenica</td><td>Chiuso</td></tr></table></div></div>
+      <div class="map-embed fade-in"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11233.07!2d8.855!3d44.723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787d3b0a0c8cde5%3A0x1b2bdf8f0d3f4f4a!2sSerravalle%20Scrivia%2C%20AL!5e0!3m2!1sit!2sit!4v1680000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mappa Serravalle Scrivia"></iframe></div>
+    </div>
+    <div>
+      <div class="section-eyebrow fade-in">Scrivici</div>
+      <h2 class="section-title fade-in">Richiedi una <em>consulenza</em></h2>
+      <div class="divider fade-in"></div>
+      <div class="contact-form fade-in">
+        <div class="form-grid">
+          <div class="form-group"><label>Nome</label><input type="text" id="fname" placeholder="Mario" /></div>
+          <div class="form-group"><label>Cognome</label><input type="text" id="lname" placeholder="Rossi" /></div>
+        </div>
+        <div class="form-group"><label>Email</label><input type="email" id="femail" placeholder="mario.rossi@email.com" /></div>
+        <div class="form-group"><label>Telefono</label><input type="tel" id="fphone" placeholder="+39 333 000 0000" /></div>
+        <div class="form-group"><label>Tipo di richiesta</label><select id="ftype"><option value="">Seleziona un'area</option><option>Fiscalità e dichiarazioni</option><option>Contabilità e bilancio</option><option>Consulenza societaria</option><option>Lavoro e paghe</option><option>Revisione legale</option><option>Patrimonio e privati</option><option>Altro</option></select></div>
+        <div class="form-group"><label>Messaggio</label><textarea id="fmsg" placeholder="Descrivi brevemente la tua esigenza…"></textarea></div>
+        <button class="btn-submit" onclick="submitForm()">Invia la richiesta</button>
+        <p class="form-note">I dati saranno trattati nel rispetto del GDPR (Reg. UE 2016/679) e utilizzati esclusivamente per rispondere alla tua richiesta.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<footer>
+  <div class="footer-brand">Studio Oliviero — Commercialisti</div>
+  <div class="footer-links"><a href="#">Privacy Policy</a><a href="#">Cookie Policy</a><a href="#">Note Legali</a><a href="#contatti">Contatti</a></div>
+  <div class="footer-copy">© 2025 Studio Oliviero. P.IVA [Da completare]</div>
+</footer>
+<div id="toast">✓ Messaggio inviato. Ti risponderemo entro 24 ore.</div>
+<script>
+  window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40); });
+  function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
+  function closeMenu() { document.getElementById('mobileMenu').classList.remove('open'); }
+  const observer = new IntersectionObserver((entries) => { entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); observer.unobserve(e.target); } }); }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  function submitForm() {
+    const fname = document.getElementById('fname').value.trim();
+    const femail = document.getElementById('femail').value.trim();
+    if (!fname || !femail) { alert('Compila almeno nome ed email.'); return; }
+    const toast = document.getElementById('toast');
+    toast.classList.add('show');
+    setTimeout(() => toast.classList.remove('show'), 4000);
+    ['fname','lname','femail','fphone','fmsg'].forEach(id => document.getElementById(id).value = '');
+    document.getElementById('ftype').selectedIndex = 0;
+  }
+</script>
+</body>
+</html>
