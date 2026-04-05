@@ -10,205 +10,205 @@
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
-  --navy:#1a2133;--navy-deep:#111827;
-  --gold:#b8975a;--gold-light:#d4b483;
-  --burg:#7a2e3c;--burg-light:#a04050;
-  --cream:#f7f4ef;--warm:#fdfbf8;
-  --text:#2c2c2c;--muted:#7a7a72;--border:#e0dbd2;
+  --navy:#1a2133;
+  --navy-deep:#111827;
+  --gold:#b8975a;
+  --gold-light:#d4b483;
+  --burg:#7a2e3c;
+  --burg-light:#a04050;
+  --cream:#f7f4ef;
+  --warm:#fdfbf8;
+  --text:#2c2c2c;
+  --muted:#7a7a72;
+  --border:#e0dbd2;
 }
-html{scroll-behavior:smooth}
-body{font-family:'Jost',sans-serif;font-weight:300;background:var(--warm);color:var(--text);font-size:16px;line-height:1.7}
+html { scroll-behavior: smooth; }
+body { font-family: 'Jost', sans-serif; font-weight: 300; background: var(--warm); color: var(--text); font-size: 16px; line-height: 1.7; }
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(253,251,248,.96);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 5%;height:68px;transition:box-shadow .3s}
-nav.scrolled{box-shadow:0 2px 20px rgba(0,0,0,.08)}
-.logo{font-family:'Cormorant Garamond',serif;font-size:1.25rem;font-weight:600;color:var(--navy);text-decoration:none;letter-spacing:.02em}
-.logo span{color:var(--gold)}
-.nav-links{display:flex;gap:2rem;list-style:none}
-.nav-links a{text-decoration:none;color:var(--text);font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;font-weight:400;transition:color .2s}
-.nav-links a:hover{color:var(--gold)}
-.nav-cta{background:var(--navy);color:#fff!important;padding:.5rem 1.2rem;border-radius:2px}
-.nav-cta:hover{background:var(--gold)!important}
-.burger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.burger span{display:block;width:24px;height:1.5px;background:var(--navy)}
-.mob{display:none;position:fixed;top:68px;left:0;right:0;bottom:0;background:var(--warm);z-index:99;padding:2rem 5%;flex-direction:column;gap:1.5rem;overflow-y:auto}
-.mob.open{display:flex}
-.mob a{text-decoration:none;color:var(--text);font-size:1.1rem;font-weight:400;border-bottom:1px solid var(--border);padding-bottom:1rem}
+nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,251,248,.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 68px; transition: box-shadow .3s; }
+nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,.08); }
+.logo { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--navy); text-decoration: none; letter-spacing: .02em; }
+.logo span { color: var(--gold); }
+.nav-links { display: flex; gap: 2rem; list-style: none; }
+.nav-links a { text-decoration: none; color: var(--text); font-size: .82rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 400; transition: color .2s; }
+.nav-links a:hover { color: var(--gold); }
+.nav-cta { background: var(--navy); color: #fff !important; padding: .5rem 1.2rem; border-radius: 2px; }
+.nav-cta:hover { background: var(--gold) !important; }
+.burger { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+.burger span { display: block; width: 24px; height: 1.5px; background: var(--navy); }
+.mob { display: none; position: fixed; top: 68px; left: 0; right: 0; bottom: 0; background: var(--warm); z-index: 99; padding: 2rem 5%; flex-direction: column; gap: 1.5rem; overflow-y: auto; }
+.mob.open { display: flex; }
+.mob a { text-decoration: none; color: var(--text); font-size: 1.1rem; font-weight: 400; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
 
 /* HERO */
-#home{min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding:68px 5% 8rem;
-.hbg{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 30%,rgba(184,151,90,.10) 0%,transparent 55%),radial-gradient(ellipse at 20% 80%,rgba(122,46,60,.08) 0%,transparent 50%),linear-gradient(160deg,#1a2133 0%,#0d1320 60%,#111827 100%)}
-.hline{position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,transparent,var(--gold),var(--burg),transparent);opacity:.5}
-.hpat{position:absolute;inset:0;opacity:.03;background-image:repeating-linear-gradient(0deg,#fff 0px,#fff 1px,transparent 1px,transparent 60px),repeating-linear-gradient(90deg,#fff 0px,#fff 1px,transparent 1px,transparent 60px)}
-.hcont{position:relative;z-index:1;max-width:860px}
-.eyebrow-hero{font-size:.75rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);font-weight:400;margin-bottom:1.5rem;display:flex;align-items:center;gap:1rem}
-.eyebrow-hero::before{content:'';display:block;width:40px;height:1px;background:var(--gold)}
-.htitle{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,7vw,5.5rem);font-weight:300;color:#fff;line-height:1.1;margin-bottom:.8rem}
-.htitle em{font-style:italic;color:var(--gold-light)}
-.hslogan{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(255,255,255,.4);font-size:clamp(1rem,2vw,1.3rem);margin-bottom:2rem;letter-spacing:.03em}
-.souls{display:grid;grid-template-columns:1fr 1fr;gap:1px;margin-bottom:2.5rem;background:rgba(255,255,255,.08);max-width:660px}
-.soul{padding:1.5rem}
-.soul:first-child{background:rgba(184,151,90,.08);border-left:2px solid var(--gold)}
-.soul:last-child{background:rgba(122,46,60,.08);border-left:2px solid var(--burg-light)}
-.soul-label{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem}
-.soul-label.g{color:var(--gold)}
-.soul-label.r{color:var(--burg-light)}
-.soul-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;color:#fff;font-weight:400}
-.soul-role{font-size:.72rem;color:rgba(255,255,255,.45);margin-top:.2rem}
-.hactions{display:flex;gap:1rem;flex-wrap:wrap}
-.btn-p{background:var(--gold);color:#fff;padding:.85rem 2rem;text-decoration:none;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:500;transition:background .25s;display:inline-block}
-.btn-p:hover{background:var(--gold-light)}
-.btn-g{border:1px solid rgba(255,255,255,.25);color:rgba(255,255,255,.75);padding:.85rem 2rem;text-decoration:none;font-size:.8rem;letter-spacing:.12em;text-transform:uppercase;font-weight:400;transition:border-color .25s,color .25s;display:inline-block}
-.btn-g:hover{border-color:var(--gold);color:var(--gold)}
+#home { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 68px 5% 8rem; background: var(--navy-deep); position: relative; overflow: hidden; }
+.hbg { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(184,151,90,.10) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(122,46,60,.08) 0%, transparent 50%), linear-gradient(160deg, #1a2133 0%, #0d1320 60%, #111827 100%); }
+.hline { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), var(--burg), transparent); opacity: .5; }
+.hpat { position: absolute; inset: 0; opacity: .03; background-image: repeating-linear-gradient(0deg, #fff 0px, #fff 1px, transparent 1px, transparent 60px), repeating-linear-gradient(90deg, #fff 0px, #fff 1px, transparent 1px, transparent 60px); }
+.hcont { position: relative; z-index: 1; max-width: 860px; }
+.hero-ey { font-size: .75rem; letter-spacing: .2em; text-transform: uppercase; color: var(--gold); font-weight: 400; margin-bottom: 1.5rem; display: flex; align-items: center; gap: 1rem; }
+.hero-ey::before { content: ''; display: block; width: 40px; height: 1px; background: var(--gold); }
+.htitle { font-family: 'Cormorant Garamond', serif; font-size: clamp(2.8rem, 7vw, 5.5rem); font-weight: 300; color: #fff; line-height: 1.1; margin-bottom: .8rem; }
+.htitle em { font-style: italic; color: var(--gold-light); }
+.hslogan { font-family: 'Cormorant Garamond', serif; font-style: italic; color: rgba(255,255,255,.4); font-size: clamp(1rem,2vw,1.3rem); margin-bottom: 2rem; letter-spacing: .03em; }
+.souls { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; margin-bottom: 2.5rem; background: rgba(255,255,255,.08); max-width: 660px; }
+.soul { padding: 1.5rem; }
+.soul:first-child { background: rgba(184,151,90,.08); border-left: 2px solid var(--gold); }
+.soul:last-child { background: rgba(122,46,60,.08); border-left: 2px solid var(--burg-light); }
+.soul-label { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; margin-bottom: .4rem; }
+.soul-label.g { color: var(--gold); }
+.soul-label.r { color: var(--burg-light); }
+.soul-name { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; color: #fff; font-weight: 400; }
+.soul-role { font-size: .72rem; color: rgba(255,255,255,.45); margin-top: .2rem; }
+.hactions { display: flex; gap: 1rem; flex-wrap: wrap; }
+.btn-p { background: var(--gold); color: #fff; padding: .85rem 2rem; text-decoration: none; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 500; transition: background .25s; display: inline-block; }
+.btn-p:hover { background: var(--gold-light); }
+.btn-g { border: 1px solid rgba(255,255,255,.25); color: rgba(255,255,255,.75); padding: .85rem 2rem; text-decoration: none; font-size: .8rem; letter-spacing: .12em; text-transform: uppercase; font-weight: 400; transition: border-color .25s, color .25s; display: inline-block; }
+.btn-g:hover { border-color: var(--gold); color: var(--gold); }
 
 /* STRIP */
-.strip{background:var(--navy);padding:3rem 5%;display:flex;gap:3rem;flex-wrap:wrap;justify-content:center}
-.strip-i{text-align:center;flex:1;min-width:140px;max-width:200px}
-.strip-n{font-family:'Cormorant Garamond',serif;font-size:2.8rem;font-weight:300;color:var(--gold);line-height:1}
-.strip-l{color:rgba(255,255,255,.5);font-size:.75rem;letter-spacing:.1em;text-transform:uppercase;margin-top:.4rem}
+.strip { background: var(--navy); padding: 3rem 5%; display: flex; gap: 3rem; flex-wrap: wrap; justify-content: center; }
+.strip-i { text-align: center; flex: 1; min-width: 140px; max-width: 200px; }
+.strip-n { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold); line-height: 1; }
+.strip-l { color: rgba(255,255,255,.5); font-size: .75rem; letter-spacing: .1em; text-transform: uppercase; margin-top: .4rem; }
 
-/* SEZIONI GENERALI */
-section{padding:6rem 5%}
-.sp{padding:6rem 5%}
-.sp-alt{padding:6rem 5%;background:var(--cream)}
-.ey{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;font-weight:400;margin-bottom:.75rem}
-.ey-g{color:var(--gold)}
-.ey-r{color:var(--burg)}
-.stit{font-family:'Cormorant Garamond',serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:300;color:var(--navy);line-height:1.2;margin-bottom:1.5rem}
-.eg{font-style:italic;color:var(--gold)}
-.er{font-style:italic;color:var(--burg)}
-.div{width:50px;height:2px;margin-bottom:2rem}
-.div-g{background:var(--gold)}
-.div-r{background:var(--burg)}
-.lead{font-size:1.05rem;color:var(--muted);max-width:640px;line-height:1.9}
+/* SEZIONI */
+section { padding: 6rem 5%; }
+.sp { padding: 6rem 5%; }
+.sp-alt { padding: 6rem 5%; background: var(--cream); }
+.ey { font-size: .72rem; letter-spacing: .2em; text-transform: uppercase; font-weight: 400; margin-bottom: .75rem; }
+.ey-g { color: var(--gold); }
+.ey-r { color: var(--burg); }
+.stit { font-family: 'Cormorant Garamond', serif; font-size: clamp(1.8rem,4vw,2.8rem); font-weight: 300; color: var(--navy); line-height: 1.2; margin-bottom: 1.5rem; }
+.eg { font-style: italic; color: var(--gold); }
+.er { font-style: italic; color: var(--burg); }
+.divl { width: 50px; height: 2px; margin-bottom: 2rem; }
+.divl-g { background: var(--gold); }
+.divl-r { background: var(--burg); }
+.lead { font-size: 1.05rem; color: var(--muted); max-width: 640px; line-height: 1.9; }
 
-/* AREA HEADER */
-#sc{background:var(--cream)}
-#sl{background:#f5f0f1}
-.ah{display:flex;align-items:center;gap:1.5rem;margin-bottom:3rem}
-.ab{width:56px;height:56px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:1.1rem;font-weight:300;flex-shrink:0}
-.ab-g{background:var(--navy);color:var(--gold)}
-.ab-r{background:var(--burg);color:#fff}
-.at{font-family:'Cormorant Garamond',serif;font-size:1.6rem;font-weight:400;color:var(--navy)}
-.as{font-size:.82rem;color:var(--muted);margin-top:.2rem}
+/* AREA SERVIZI */
+#sc { background: var(--cream); }
+#sl { background: #f5f0f1; }
+.ah { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3rem; }
+.ab { width: 56px; height: 56px; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; font-weight: 300; flex-shrink: 0; }
+.ab-g { background: var(--navy); color: var(--gold); }
+.ab-r { background: var(--burg); color: #fff; }
+.at { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--navy); }
+.as { font-size: .82rem; color: var(--muted); margin-top: .2rem; }
+.sgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px,1fr)); gap: 1.5px; background: var(--border); margin-top: 3rem; }
+.scard { background: var(--warm); padding: 2.2rem; transition: background .25s; }
+.scard:hover { background: #fff; }
+.si { width: 40px; height: 40px; margin-bottom: 1.2rem; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; }
+.si-g { background: var(--navy); color: var(--gold); }
+.si-r { background: var(--burg); color: #fff; }
+.st { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 400; color: var(--navy); margin-bottom: .6rem; }
+.sx { font-size: .88rem; color: var(--muted); line-height: 1.8; }
+.slist { margin-top: .75rem; list-style: none; }
+.slist li { font-size: .8rem; color: var(--muted); padding: .18rem 0 .18rem 1rem; position: relative; }
+.slist li.lg::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
+.slist li.lr::before { content: '—'; position: absolute; left: 0; color: var(--burg-light); }
 
-/* GRIGLIA SERVIZI */
-.sgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:1.5px;background:var(--border);margin-top:3rem}
-.sc{background:var(--warm);padding:2.2rem;transition:background .25s}
-.sc:hover{background:#fff}
-.si{width:40px;height:40px;margin-bottom:1.2rem;display:flex;align-items:center;justify-content:center;font-size:1.1rem}
-.si-g{background:var(--navy);color:var(--gold)}
-.si-r{background:var(--burg);color:#fff}
-.st{font-family:'Cormorant Garamond',serif;font-size:1.2rem;font-weight:400;color:var(--navy);margin-bottom:.6rem}
-.sx{font-size:.88rem;color:var(--muted);line-height:1.8}
-.sl{margin-top:.75rem;list-style:none}
-.sl li{font-size:.8rem;color:var(--muted);padding:.18rem 0 .18rem 1rem;position:relative}
-.sl li.lg::before{content:'—';position:absolute;left:0;color:var(--gold)}
-.sl li.lr::before{content:'—';position:absolute;left:0;color:var(--burg-light)}
+/* DIVISORE SILVIA */
+.sdiv { padding: 3.5rem 5%; display: flex; align-items: center; justify-content: center; flex-wrap: wrap; background: linear-gradient(135deg, #5a1e2a 0%, #7a2e3c 40%, #3d1520 100%); }
+.sdiv-i { text-align: center; }
+.sdiv-l { font-size: .65rem; letter-spacing: .15em; text-transform: uppercase; margin-bottom: .3rem; color: rgba(255,255,255,.5); }
+.sdiv-n { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; color: #fff; font-weight: 300; }
+.sdiv-r { font-size: .85rem; color: rgba(255,255,255,.6); margin-top: .4rem; }
 
-/* DIVISORE BORDEAUX */
-.sdiv{padding:3.5rem 5%;display:flex;align-items:center;justify-content:center;flex-wrap:wrap;background:linear-gradient(135deg,#5a1e2a 0%,#7a2e3c 40%,#3d1520 100%)}
-.sdiv-i{text-align:center}
-.sdiv-l{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.3rem;color:rgba(255,255,255,.5)}
-.sdiv-n{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:#fff;font-weight:300}
-.sdiv-r{font-size:.85rem;color:rgba(255,255,255,.6);margin-top:.4rem}
-
-/* STUDIO GRID */
-.sgr{display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:center}
-.svis{position:relative}
-.sph{width:100%;aspect-ratio:3/4;max-height:500px;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:4rem;font-weight:300;position:relative;overflow:hidden}
-.sph-g{background:linear-gradient(135deg,var(--navy),#243050);color:rgba(255,255,255,.15)}
-.sph-r{background:linear-gradient(135deg,var(--burg),#5a1e2a);color:rgba(255,255,255,.15)}
-.sbadge{position:absolute;bottom:-1rem;right:-1rem;color:#fff;padding:1.2rem;text-align:center;width:110px}
-.sbadge-g{background:var(--gold)}
-.sbadge-r{background:var(--burg)}
-.sbadge strong{display:block;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:300}
-.sbadge span{font-size:.6rem;letter-spacing:.1em;text-transform:uppercase}
-.sbio{color:var(--muted);line-height:1.9;margin-bottom:1rem}
-blockquote{border-left:2px solid;padding-left:1.5rem;font-family:'Cormorant Garamond',serif;font-style:italic;font-size:1.1rem;color:var(--navy);margin:1.8rem 0;line-height:1.7}
-.bq-g{border-color:var(--gold)}
-.bq-r{border-color:var(--burg)}
-.creds{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1.8rem}
-.ctag{border:1px solid var(--border);font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;padding:.3rem .7rem;color:var(--muted)}
+/* GRID PROFESSIONISTI */
+.sgr { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
+.svis { position: relative; }
+.sph { width: 100%; aspect-ratio: 3/4; max-height: 500px; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; position: relative; overflow: hidden; }
+.sph-g { background: linear-gradient(135deg, var(--navy), #243050); color: rgba(255,255,255,.15); }
+.sph-r { background: linear-gradient(135deg, var(--burg), #5a1e2a); color: rgba(255,255,255,.15); }
+.sbadge { position: absolute; bottom: -1rem; right: -1rem; color: #fff; padding: 1.2rem; text-align: center; width: 110px; }
+.sbadge-g { background: var(--gold); }
+.sbadge-r { background: var(--burg); }
+.sbadge strong { display: block; font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; font-weight: 300; }
+.sbadge span { font-size: .6rem; letter-spacing: .1em; text-transform: uppercase; }
+.sbio { color: var(--muted); line-height: 1.9; margin-bottom: 1rem; }
+blockquote { border-left: 2px solid; padding-left: 1.5rem; font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.1rem; color: var(--navy); margin: 1.8rem 0; line-height: 1.7; }
+.bq-g { border-color: var(--gold); }
+.bq-r { border-color: var(--burg); }
+.creds { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 1.8rem; }
+.ctag { border: 1px solid var(--border); font-size: .7rem; letter-spacing: .08em; text-transform: uppercase; padding: .3rem .7rem; color: var(--muted); }
 
 /* STAFF */
-#staff{background:var(--navy-deep)}
-.stgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2rem;margin-top:3rem}
-.stcard{text-align:center}
-.stph{width:160px;height:160px;margin:0 auto 1.2rem;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:2rem;font-weight:300}
-.stph-g{background:linear-gradient(135deg,var(--navy),#2a3550);color:var(--gold);border:1px solid rgba(184,151,90,.3)}
-.stph-r{background:linear-gradient(135deg,var(--burg),#5a1e2a);color:rgba(255,255,255,.7)}
-.stph-n{background:linear-gradient(135deg,#2a2a2a,#3a3a3a);color:rgba(255,255,255,.3)}
-.stn{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:#fff}
-.str{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;margin-top:.2rem}
-.str-g{color:var(--gold)}
-.str-r{color:var(--burg-light)}
-.str-n{color:rgba(255,255,255,.4)}
-.stb{font-size:.83rem;color:rgba(255,255,255,.4);margin-top:.75rem;line-height:1.7}
+#staff { background: var(--navy-deep); }
+.stgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 2rem; margin-top: 3rem; }
+.stcard { text-align: center; }
+.stph { width: 160px; height: 160px; margin: 0 auto 1.2rem; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 2rem; font-weight: 300; }
+.stph-g { background: linear-gradient(135deg, var(--navy), #2a3550); color: var(--gold); border: 1px solid rgba(184,151,90,.3); }
+.stph-r { background: linear-gradient(135deg, var(--burg), #5a1e2a); color: rgba(255,255,255,.7); }
+.stph-n { background: linear-gradient(135deg, #2a2a2a, #3a3a3a); color: rgba(255,255,255,.3); }
+.stn { font-family: 'Cormorant Garamond', serif; font-size: 1.05rem; font-weight: 600; color: #fff; }
+.str { font-size: .72rem; letter-spacing: .1em; text-transform: uppercase; margin-top: .2rem; }
+.str-g { color: var(--gold); }
+.str-r { color: var(--burg-light); }
+.str-n { color: rgba(255,255,255,.4); }
+.stb { font-size: .83rem; color: rgba(255,255,255,.4); margin-top: .75rem; line-height: 1.7; }
 
 /* PERCHE */
-#perche{background:var(--cream)}
-.wgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2rem;margin-top:3rem}
-.wcard{border:1px solid var(--border);padding:2rem;background:var(--warm);transition:border-color .3s}
-.wcard:hover{border-color:var(--gold)}
-.wnum{font-family:'Cormorant Garamond',serif;font-size:3rem;font-weight:300;color:var(--gold);opacity:.35;line-height:1}
-.wtit{font-family:'Cormorant Garamond',serif;font-size:1.2rem;color:var(--navy);margin-top:.5rem;margin-bottom:.75rem}
-.wtx{font-size:.88rem;color:var(--muted);line-height:1.8}
+#perche { background: var(--cream); }
+.wgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 2rem; margin-top: 3rem; }
+.wcard { border: 1px solid var(--border); padding: 2rem; background: var(--warm); transition: border-color .3s; }
+.wcard:hover { border-color: var(--gold); }
+.wnum { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold); opacity: .35; line-height: 1; }
+.wtit { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--navy); margin-top: .5rem; margin-bottom: .75rem; }
+.wtx { font-size: .88rem; color: var(--muted); line-height: 1.8; }
 
 /* CONTATTI */
-.cgrid{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:start}
-.ci{display:flex;gap:1.2rem;margin-bottom:1.8rem;align-items:flex-start}
-.cicon{width:36px;height:36px;flex-shrink:0;background:var(--cream);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:1rem}
-.clabel{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold)}
-.cval{font-size:.92rem;color:var(--text);margin-top:.2rem}
-.cval a{color:var(--text);text-decoration:none}
-.cval a:hover{color:var(--gold)}
-.otab{width:100%;border-collapse:collapse;margin-top:.5rem}
-.otab td{padding:.45rem 0;font-size:.85rem;border-bottom:1px solid var(--border)}
-.otab td:first-child{color:var(--muted);width:50%}
-.cform{background:var(--cream);padding:2.5rem}
-.fg{margin-bottom:1.2rem}
-.fg label{display:block;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:.4rem}
-.fg input,.fg select,.fg textarea{width:100%;border:1px solid var(--border);background:#fff;padding:.75rem 1rem;font-family:'Jost',sans-serif;font-size:.9rem;color:var(--text);outline:none;transition:border-color .2s;-webkit-appearance:none}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--gold)}
-.fg textarea{resize:vertical;min-height:100px}
-.fgg{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
-.bsub{background:var(--navy);color:#fff;border:none;padding:.9rem 2.5rem;font-family:'Jost',sans-serif;font-size:.78rem;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;transition:background .25s;width:100%;font-weight:500}
-.bsub:hover{background:var(--gold)}
-.fnote{font-size:.7rem;color:var(--muted);margin-top:.75rem;text-align:center}
-.mape{margin-top:2rem}
-.mape iframe{width:100%;height:200px;border:none;filter:grayscale(30%)}
+.cgrid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
+.ci { display: flex; gap: 1.2rem; margin-bottom: 1.8rem; align-items: flex-start; }
+.cicon { width: 36px; height: 36px; flex-shrink: 0; background: var(--cream); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1rem; }
+.clabel { font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--gold); }
+.cval { font-size: .92rem; color: var(--text); margin-top: .2rem; }
+.cval a { color: var(--text); text-decoration: none; }
+.cval a:hover { color: var(--gold); }
+.otab { width: 100%; border-collapse: collapse; margin-top: .5rem; }
+.otab td { padding: .45rem 0; font-size: .85rem; border-bottom: 1px solid var(--border); }
+.otab td:first-child { color: var(--muted); width: 50%; }
+.cform { background: var(--cream); padding: 2.5rem; }
+.fg { margin-bottom: 1.2rem; }
+.fg label { display: block; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); margin-bottom: .4rem; }
+.fg input, .fg select, .fg textarea { width: 100%; border: 1px solid var(--border); background: #fff; padding: .75rem 1rem; font-family: 'Jost', sans-serif; font-size: .9rem; color: var(--text); outline: none; transition: border-color .2s; -webkit-appearance: none; }
+.fg input:focus, .fg select:focus, .fg textarea:focus { border-color: var(--gold); }
+.fg textarea { resize: vertical; min-height: 100px; }
+.fgg { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+.bsub { background: var(--navy); color: #fff; border: none; padding: .9rem 2.5rem; font-family: 'Jost', sans-serif; font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; cursor: pointer; transition: background .25s; width: 100%; font-weight: 500; }
+.bsub:hover { background: var(--gold); }
+.fnote { font-size: .7rem; color: var(--muted); margin-top: .75rem; text-align: center; }
+.mape { margin-top: 2rem; }
+.mape iframe { width: 100%; height: 200px; border: none; filter: grayscale(30%); }
 
 /* FOOTER */
-footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(184,151,90,.15)}
-.fb{font-family:'Cormorant Garamond',serif;color:rgba(255,255,255,.7);font-size:1rem}
-.ft{font-family:'Cormorant Garamond',serif;font-style:italic;color:rgba(255,255,255,.3);font-size:.85rem}
-.flinks{display:flex;gap:1.5rem;flex-wrap:wrap}
-.flinks a{color:rgba(255,255,255,.35);font-size:.75rem;text-decoration:none;transition:color .2s}
-.flinks a:hover{color:var(--gold)}
-.fc{font-size:.72rem}
-
-/* TOAST */
-#toast{position:fixed;bottom:2rem;right:2rem;z-index:999;background:var(--navy);color:#fff;padding:1rem 1.5rem;font-size:.85rem;transform:translateY(100px);opacity:0;transition:all .4s;border-left:3px solid var(--gold);pointer-events:none}
-#toast.show{transform:translateY(0);opacity:1}
-
-/* FADE IN */
-.fi{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
-.fi.v{opacity:1;transform:translateY(0)}
+footer { background: var(--navy-deep); color: rgba(255,255,255,.4); padding: 2.5rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(184,151,90,.15); }
+.fb { font-family: 'Cormorant Garamond', serif; color: rgba(255,255,255,.7); font-size: 1rem; }
+.ft { font-family: 'Cormorant Garamond', serif; font-style: italic; color: rgba(255,255,255,.3); font-size: .85rem; }
+.flinks { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+.flinks a { color: rgba(255,255,255,.35); font-size: .75rem; text-decoration: none; transition: color .2s; }
+.flinks a:hover { color: var(--gold); }
+.fc { font-size: .72rem; }
+#toast { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; background: var(--navy); color: #fff; padding: 1rem 1.5rem; font-size: .85rem; transform: translateY(100px); opacity: 0; transition: all .4s; border-left: 3px solid var(--gold); pointer-events: none; }
+#toast.show { transform: translateY(0); opacity: 1; }
+.fi { opacity: 0; transform: translateY(24px); transition: opacity .7s ease, transform .7s ease; }
+.fi.v { opacity: 1; transform: translateY(0); }
 
 /* RESPONSIVE */
-@media(max-width:900px){
-  .sgr,.cgrid{grid-template-columns:1fr;gap:3rem}
-  .sbadge{right:0}
-  .fgg{grid-template-columns:1fr}
-  .nav-links{display:none}
-  .burger{display:flex}
-  .souls{grid-template-columns:1fr;max-width:340px}
+@media (max-width: 900px) {
+  .sgr, .cgrid { grid-template-columns: 1fr; gap: 3rem; }
+  .sbadge { right: 0; }
+  .fgg { grid-template-columns: 1fr; }
+  .nav-links { display: none; }
+  .burger { display: flex; }
+  .souls { grid-template-columns: 1fr; max-width: 340px; }
 }
-@media(max-width:600px){
-  #home{padding-bottom:5rem}
-  section,.sp,.sp-alt{padding:4rem 5%}
-  .strip{gap:2rem;padding:2.5rem 5%}
+@media (max-width: 600px) {
+  #home { padding-bottom: 5rem; }
+  section, .sp, .sp-alt { padding: 4rem 5%; }
+  .strip { gap: 2rem; padding: 2.5rem 5%; }
 }
 </style>
 </head>
@@ -233,11 +233,12 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
   <a href="#contatti" onclick="closeMenu()">Contatti</a>
 </div>
 
-<!-- HERO -->
 <section id="home">
-  <div class="hbg"></div><div class="hline"></div><div class="hpat"></div>
+  <div class="hbg"></div>
+  <div class="hline"></div>
+  <div class="hpat"></div>
   <div class="hcont">
-    <div class="eyebrow-hero">Serravalle Scrivia — Provincia di Alessandria</div>
+    <div class="hero-ey">Serravalle Scrivia — Provincia di Alessandria</div>
     <h1 class="htitle">Un unico studio.<br>Due <em>competenze</em><br>al vostro fianco.</h1>
     <p class="hslogan">Professionisti contabili dal 1962</p>
     <div class="souls">
@@ -259,7 +260,6 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
   </div>
 </section>
 
-<!-- STRIP -->
 <div class="strip">
   <div class="strip-i fi"><div class="strip-n">1962</div><div class="strip-l">Anno di fondazione</div></div>
   <div class="strip-i fi"><div class="strip-n">60+</div><div class="strip-l">Anni di esperienza</div></div>
@@ -267,7 +267,6 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
   <div class="strip-i fi"><div class="strip-n">360°</div><div class="strip-l">Consulenza integrata</div></div>
 </div>
 
-<!-- SERVIZI COMMERCIALISTA -->
 <section id="sc">
   <div class="ah fi">
     <div class="ab ab-g">M.O.</div>
@@ -275,19 +274,18 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
   </div>
   <div class="ey ey-g fi">Fiscalità · Contabilità · Società</div>
   <h2 class="stit fi">Consulenza <span class="eg">fiscale e societaria</span></h2>
-  <div class="div div-g fi"></div>
+  <div class="divl divl-g fi"></div>
   <p class="lead fi">Assistenza completa per imprenditori, società e privati in ogni aspetto della gestione fiscale, contabile e societaria — con l'esperienza maturata in oltre sessant'anni di attività continuativa sul territorio.</p>
   <div class="sgrid">
-    <div class="sc fi"><div class="si si-g">✦</div><div class="st">Fiscalità e Dichiarazioni</div><p class="sx">Gestione degli adempimenti tributari per persone fisiche, ditte individuali e società di ogni forma.</p><ul class="sl"><li class="lg">Dichiarazioni dei redditi (730, Redditi PF/SP/SC)</li><li class="lg">IVA e liquidazioni periodiche</li><li class="lg">IMU, IVIE, IVAFE</li><li class="lg">Consulenza fiscale continuativa</li></ul></div>
-    <div class="sc fi"><div class="si si-g">⬡</div><div class="st">Contabilità e Bilancio</div><p class="sx">Tenuta della contabilità ordinaria e semplificata, redazione del bilancio e adempimenti correlati.</p><ul class="sl"><li class="lg">Contabilità ordinaria e semplificata</li><li class="lg">Bilancio civilistico e fiscale</li><li class="lg">Nota integrativa e relazioni</li><li class="lg">Deposito bilanci al Registro Imprese</li></ul></div>
-    <div class="sc fi"><div class="si si-g">◈</div><div class="st">Consulenza Societaria</div><p class="sx">Supporto nella costituzione, gestione e trasformazione di società e operazioni straordinarie.</p><ul class="sl"><li class="lg">Costituzione di società (SRL, SPA, SNC, SAS)</li><li class="lg">Fusioni, scissioni, trasformazioni</li><li class="lg">Patti parasociali e governance</li><li class="lg">Due diligence fiscale</li></ul></div>
-    <div class="sc fi"><div class="si si-g">◉</div><div class="st">Lavoro e Paghe</div><p class="sx">Gestione del personale dipendente, elaborazione cedolini e consulenza giuslavoristica.</p><ul class="sl"><li class="lg">Elaborazione buste paga</li><li class="lg">Contratti di assunzione e cessazione</li><li class="lg">CU, 770, IRAP lavoro</li><li class="lg">Consulenza su CCNL applicabili</li></ul></div>
-    <div class="sc fi"><div class="si si-g">▲</div><div class="st">Revisione Legale</div><p class="sx">Incarichi di revisione dei conti e sindaco effettivo in società soggette a controllo legale.</p><ul class="sl"><li class="lg">Revisione dei conti annuali</li><li class="lg">Sindaco effettivo e supplente</li><li class="lg">Revisore enti del terzo settore</li><li class="lg">Relazioni al bilancio</li></ul></div>
-    <div class="sc fi"><div class="si si-g">◇</div><div class="st">Privati e Patrimonio</div><p class="sx">Pianificazione fiscale e patrimoniale, successioni, donazioni e monitoraggio degli investimenti.</p><ul class="sl"><li class="lg">Successioni e dichiarazioni di successione</li><li class="lg">Pianificazione patrimoniale</li><li class="lg">Quadro RW e monitoraggio fiscale</li><li class="lg">Agevolazioni prima casa e ristrutturazioni</li></ul></div>
+    <div class="scard fi"><div class="si si-g">✦</div><div class="st">Fiscalità e Dichiarazioni</div><p class="sx">Gestione degli adempimenti tributari per persone fisiche, ditte individuali e società di ogni forma.</p><ul class="slist"><li class="lg">Dichiarazioni dei redditi (730, Redditi PF/SP/SC)</li><li class="lg">IVA e liquidazioni periodiche</li><li class="lg">IMU, IVIE, IVAFE</li><li class="lg">Consulenza fiscale continuativa</li></ul></div>
+    <div class="scard fi"><div class="si si-g">⬡</div><div class="st">Contabilità e Bilancio</div><p class="sx">Tenuta della contabilità ordinaria e semplificata, redazione del bilancio e adempimenti correlati.</p><ul class="slist"><li class="lg">Contabilità ordinaria e semplificata</li><li class="lg">Bilancio civilistico e fiscale</li><li class="lg">Nota integrativa e relazioni</li><li class="lg">Deposito bilanci al Registro Imprese</li></ul></div>
+    <div class="scard fi"><div class="si si-g">◈</div><div class="st">Consulenza Societaria</div><p class="sx">Supporto nella costituzione, gestione e trasformazione di società e operazioni straordinarie.</p><ul class="slist"><li class="lg">Costituzione di società (SRL, SPA, SNC, SAS)</li><li class="lg">Fusioni, scissioni, trasformazioni</li><li class="lg">Patti parasociali e governance</li><li class="lg">Due diligence fiscale</li></ul></div>
+    <div class="scard fi"><div class="si si-g">◉</div><div class="st">Lavoro e Paghe</div><p class="sx">Gestione del personale dipendente, elaborazione cedolini e consulenza giuslavoristica.</p><ul class="slist"><li class="lg">Elaborazione buste paga</li><li class="lg">Contratti di assunzione e cessazione</li><li class="lg">CU, 770, IRAP lavoro</li><li class="lg">Consulenza su CCNL applicabili</li></ul></div>
+    <div class="scard fi"><div class="si si-g">▲</div><div class="st">Revisione Legale</div><p class="sx">Incarichi di revisione dei conti e sindaco effettivo in società soggette a controllo legale.</p><ul class="slist"><li class="lg">Revisione dei conti annuali</li><li class="lg">Sindaco effettivo e supplente</li><li class="lg">Revisore enti del terzo settore</li><li class="lg">Relazioni al bilancio</li></ul></div>
+    <div class="scard fi"><div class="si si-g">◇</div><div class="st">Privati e Patrimonio</div><p class="sx">Pianificazione fiscale e patrimoniale, successioni, donazioni e monitoraggio degli investimenti.</p><ul class="slist"><li class="lg">Successioni e dichiarazioni di successione</li><li class="lg">Pianificazione patrimoniale</li><li class="lg">Quadro RW e monitoraggio fiscale</li><li class="lg">Agevolazioni prima casa e ristrutturazioni</li></ul></div>
   </div>
 </section>
 
-<!-- DIVISORE SILVIA -->
 <div class="sdiv">
   <div class="sdiv-i">
     <div class="sdiv-l">A seguire — Area Legale</div>
@@ -296,7 +294,6 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
   </div>
 </div>
 
-<!-- SERVIZI LEGALE -->
 <section id="sl">
   <div class="ah fi">
     <div class="ab ab-r">S.O.</div>
@@ -304,20 +301,18 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
   </div>
   <div class="ey ey-r fi">Civile · Penale · Lavoro · Tributario</div>
   <h2 class="stit fi">Assistenza <span class="er">legale e giudiziale</span></h2>
-  <div class="div div-r fi"></div>
+  <div class="divl divl-r fi"></div>
   <p class="lead fi">Tutela dei diritti di privati e imprese nelle sedi giudiziarie e stragiudiziali — con un approccio orientato alla concretezza, alla chiarezza e alla difesa efficace degli interessi del cliente.</p>
   <div class="sgrid">
-    <div class="sc fi"><div class="si si-r">⚖</div><div class="st">Diritto Civile</div><p class="sx">Assistenza nelle controversie civili tra privati e imprese, dalla fase stragiudiziale al giudizio in tribunale.</p><ul class="sl"><li class="lr">Contratti e responsabilità contrattuale</li><li class="lr">Risarcimento danni</li><li class="lr">Diritti reali e proprietà</li><li class="lr">Successioni e diritto di famiglia</li></ul></div>
-    <div class="sc fi"><div class="si si-r">◼</div><div class="st">Diritto Penale</div><p class="sx">Difesa penale in ogni fase del procedimento — dalle indagini preliminari al dibattimento e alle impugnazioni.</p><ul class="sl"><li class="lr">Difesa dell'indagato e dell'imputato</li><li class="lr">Reati societari ed economici</li><li class="lr">Reati contro la persona</li><li class="lr">Assistenza alla persona offesa</li></ul></div>
-    <div class="sc fi"><div class="si si-r">◆</div><div class="st">Diritto del Lavoro</div><p class="sx">Tutela di lavoratori e datori di lavoro nelle controversie individuali e nelle relazioni sindacali.</p><ul class="sl"><li class="lr">Licenziamenti e impugnative</li><li class="lr">Mobbing e discriminazioni</li><li class="lr">Infortuni sul lavoro</li><li class="lr">Contrattualistica e accordi individuali</li></ul></div>
-    <div class="sc fi"><div class="si si-r">◻</div><div class="st">Mediazione e Stragiudiziale</div><p class="sx">Gestione delle controversie prima del giudizio: trattative, accordi transattivi e mediazione obbligatoria.</p><ul class="sl"><li class="lr">Mediazione civile e commerciale</li><li class="lr">Negoziazione assistita</li><li class="lr">Accordi transattivi</li><li class="lr">Diffide e messe in mora</li></ul></div>
-    <div class="sc fi"><div class="si si-r">▽</div><div class="st">Diritto di Famiglia</div><p class="sx">Assistenza nelle vicende familiari — separazioni, divorzi, affidamento dei figli e mantenimento.</p><ul class="sl"><li class="lr">Separazione e divorzio</li><li class="lr">Affidamento e mantenimento figli</li><li class="lr">Accordi prematrimoniali</li><li class="lr">Unioni civili e convivenze</li></ul></div>
-    <div class="sc fi"><div class="si si-r">◁</div><div class="st">Consulenza Legale d'Impresa</div><p class="sx">Supporto legale continuativo per imprenditori — in piena sinergia con l'area commercialistica dello studio.</p><ul class="sl"><li class="lr">Contrattualistica commerciale</li><li class="lr">Recupero crediti</li><li class="lr">Responsabilità degli amministratori</li><li class="lr">Tutela della proprietà intellettuale</li></ul></div>
-    <div class="sc fi"><div class="si si-r">⊛</div><div class="st">Diritto Tributario</div><p class="sx">Assistenza legale nelle controversie con il Fisco — in sinergia con l'area commercialistica per una difesa coordinata.</p><ul class="sl"><li class="lr">Ricorsi tributari in Commissione Tributaria</li><li class="lr">Accertamenti e cartelle esattoriali</li><li class="lr">Contenzioso IVA, IRPEF, IRES</li><li class="lr">Accordi e definizioni agevolate</li></ul></div>
+    <div class="scard fi"><div class="si si-r">⚖</div><div class="st">Diritto Civile</div><p class="sx">Assistenza nelle controversie civili tra privati e imprese, dalla fase stragiudiziale al giudizio in tribunale.</p><ul class="slist"><li class="lr">Contratti e responsabilità contrattuale</li><li class="lr">Risarcimento danni</li><li class="lr">Diritti reali e proprietà</li><li class="lr">Successioni e diritto di famiglia</li></ul></div>
+    <div class="scard fi"><div class="si si-r">◼</div><div class="st">Diritto Penale</div><p class="sx">Difesa penale in ogni fase del procedimento — dalle indagini preliminari al dibattimento e alle impugnazioni.</p><ul class="slist"><li class="lr">Difesa dell'indagato e dell'imputato</li><li class="lr">Reati societari ed economici</li><li class="lr">Reati contro la persona</li><li class="lr">Assistenza alla persona offesa</li></ul></div>
+    <div class="scard fi"><div class="si si-r">◆</div><div class="st">Diritto del Lavoro</div><p class="sx">Tutela di lavoratori e datori di lavoro nelle controversie individuali e nelle relazioni sindacali.</p><ul class="slist"><li class="lr">Licenziamenti e impugnative</li><li class="lr">Mobbing e discriminazioni</li><li class="lr">Infortuni sul lavoro</li><li class="lr">Contrattualistica e accordi individuali</li></ul></div>
+    <div class="scard fi"><div class="si si-r">◻</div><div class="st">Diritto Tributario</div><p class="sx">Assistenza legale nelle controversie con il Fisco — in sinergia con l'area commercialistica per una difesa coordinata e completa.</p><ul class="slist"><li class="lr">Ricorsi tributari in Commissione Tributaria</li><li class="lr">Accertamenti e cartelle esattoriali</li><li class="lr">Contenzioso IVA, IRPEF, IRES</li><li class="lr">Accordi e definizioni agevolate</li></ul></div>
+    <div class="scard fi"><div class="si si-r">▽</div><div class="st">Diritto di Famiglia</div><p class="sx">Assistenza nelle vicende familiari — separazioni, divorzi, affidamento dei figli e mantenimento.</p><ul class="slist"><li class="lr">Separazione e divorzio</li><li class="lr">Affidamento e mantenimento figli</li><li class="lr">Accordi prematrimoniali</li><li class="lr">Unioni civili e convivenze</li></ul></div>
+    <div class="scard fi"><div class="si si-r">◁</div><div class="st">Mediazione e Stragiudiziale</div><p class="sx">Gestione delle controversie prima del giudizio: trattative, accordi transattivi e mediazione obbligatoria.</p><ul class="slist"><li class="lr">Mediazione civile e commerciale</li><li class="lr">Negoziazione assistita</li><li class="lr">Accordi transattivi</li><li class="lr">Diffide e messe in mora</li></ul></div>
   </div>
 </section>
 
-<!-- MARCO -->
 <div class="sp" id="prof">
   <div class="sgr">
     <div class="svis fi">
@@ -327,7 +322,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
     <div>
       <div class="ey ey-g fi">Area Commercialistica</div>
       <h2 class="stit fi">Prof. Dott. Marco <span class="eg">Oliviero</span></h2>
-      <div class="div div-g fi"></div>
+      <div class="divl divl-g fi"></div>
       <p class="sbio fi">Dottore Commercialista e Revisore Legale iscritto all'Ordine dei Dottori Commercialisti e degli Esperti Contabili di Alessandria, il Prof. Dott. Marco Oliviero è l'erede di una tradizione professionale che affonda le radici nel 1962 — anno di fondazione dello Studio. Con oltre sessant'anni di storia alle spalle, lo studio affianca imprenditori, società e privati nella gestione fiscale, contabile e societaria con un approccio diretto e orientato alle soluzioni concrete.</p>
       <blockquote class="bq-g fi">"Ogni cliente è una realtà unica. Il mio compito è comprenderne a fondo le esigenze e offrire risposte precise, non formule standard."</blockquote>
       <div class="creds fi">
@@ -340,13 +335,12 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
   </div>
 </div>
 
-<!-- SILVIA -->
 <div class="sp-alt">
   <div class="sgr">
     <div>
       <div class="ey ey-r fi">Area Legale</div>
       <h2 class="stit fi">Avv. Silvia Melissa Maria <span class="er">Oliviero</span></h2>
-      <div class="div div-r fi"></div>
+      <div class="divl divl-r fi"></div>
       <p class="sbio fi">Avvocato iscritta all'Ordine degli Avvocati di Alessandria, l'Avv. Silvia Melissa Maria Oliviero esercita la professione forense con particolare attenzione al diritto civile, penale, del lavoro e tributario — garantendo al cliente una difesa rigorosa e una consulenza accessibile.</p>
       <blockquote class="bq-r fi">"Capire davvero la situazione del cliente è il primo passo per difenderla nel modo più efficace. La chiarezza non è un optional, è parte della prestazione."</blockquote>
       <p class="sbio fi">La sua presenza all'interno dello Studio Oliviero — realtà professionale attiva dal 1962 — consente di offrire un servizio davvero integrato: le questioni al confine tra fisco e diritto trovano qui un'unica risposta coordinata.</p>
@@ -365,11 +359,10 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
   </div>
 </div>
 
-<!-- STAFF -->
 <section id="staff">
   <div class="ey fi" style="color:var(--gold-light)">Il team</div>
   <h2 class="stit fi" style="color:#fff">Il nostro <span class="eg">staff</span></h2>
-  <div class="div div-g fi"></div>
+  <div class="divl divl-g fi"></div>
   <p class="lead fi" style="color:rgba(255,255,255,.45)">Professionisti qualificati che collaborano in sinergia — nel solco di una tradizione di eccellenza che dura da oltre sessant'anni.</p>
   <div class="stgrid">
     <div class="stcard fi">
@@ -393,11 +386,10 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
   </div>
 </section>
 
-<!-- PERCHE -->
 <section id="perche">
   <div class="ey ey-g fi">Il vantaggio</div>
   <h2 class="stit fi">Perché scegliere <span class="eg">Studio Oliviero</span></h2>
-  <div class="div div-g fi"></div>
+  <div class="divl divl-g fi"></div>
   <div class="wgrid">
     <div class="wcard fi"><div class="wnum">01</div><div class="wtit">Una storia lunga 60 anni</div><p class="wtx">Fondato nel 1962, lo Studio Oliviero è una delle realtà professionali più radicate della provincia di Alessandria. Decenni di esperienza al servizio di imprenditori, famiglie e professionisti del territorio.</p></div>
     <div class="wcard fi"><div class="wnum">02</div><div class="wtit">Consulenza davvero integrata</div><p class="wtx">Fiscale e legale sotto lo stesso tetto. Le questioni al confine tra i due ambiti — contratti, controversie societarie, diritto del lavoro — trovano qui una risposta coordinata e coerente.</p></div>
@@ -406,13 +398,12 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
   </div>
 </section>
 
-<!-- CONTATTI -->
 <section id="contatti">
   <div class="cgrid">
     <div>
       <div class="ey ey-g fi">Dove siamo</div>
       <h2 class="stit fi">Vieni a <span class="eg">trovarci</span></h2>
-      <div class="div div-g fi"></div>
+      <div class="divl divl-g fi"></div>
       <div class="ci fi"><div class="cicon">📍</div><div><div class="clabel">Indirizzo</div><div class="cval">Viale Martiri della Benedicta, 145<br>15069 Serravalle Scrivia (AL)</div></div></div>
       <div class="ci fi"><div class="cicon">📞</div><div><div class="clabel">Telefono</div><div class="cval"><a href="tel:+390143062396">0143 62396</a> &nbsp;·&nbsp; <a href="tel:+390143062951">0143 62951</a><br><a href="tel:+393515389853">+39 351 538 9853</a> <span style="font-size:.78rem;color:var(--muted)">(cellulare)</span></div></div></div>
       <div class="ci fi"><div class="cicon">✉</div><div><div class="clabel">Email</div><div class="cval"><a href="mailto:studiomoliviero@gmail.com">studiomoliviero@gmail.com</a><br><span style="font-size:.82rem;color:var(--muted)">marco.oliviero@odcecalessandria.legalmail.it</span></div></div></div>
@@ -422,7 +413,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
     <div>
       <div class="ey ey-g fi">Scrivici</div>
       <h2 class="stit fi">Richiedi una <span class="eg">consulenza</span></h2>
-      <div class="div div-g fi"></div>
+      <div class="divl divl-g fi"></div>
       <div class="cform fi">
         <div class="fgg">
           <div class="fg"><label>Nome</label><input type="text" id="fn" placeholder="Mario"/></div>
@@ -447,7 +438,7 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
               <option>Diritto del lavoro</option>
               <option>Diritto tributario</option>
               <option>Diritto di famiglia</option>
-              <option>Consulenza legale d'impresa</option>
+              <option>Mediazione e stragiudiziale</option>
             </optgroup>
             <option>Altro</option>
           </select>
@@ -460,7 +451,6 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
   </div>
 </section>
 
-<!-- FOOTER -->
 <footer>
   <div>
     <div class="fb">Studio Oliviero — Commercialisti e Avvocati</div>
@@ -478,20 +468,24 @@ footer{background:var(--navy-deep);color:rgba(255,255,255,.4);padding:2.5rem 5%;
 <div id="toast">✓ Messaggio inviato. Ti risponderemo entro 24 ore.</div>
 
 <script>
-window.addEventListener('scroll',()=>{document.getElementById('nb').classList.toggle('scrolled',window.scrollY>40)});
-function toggleMenu(){document.getElementById('mob').classList.toggle('open')}
-function closeMenu(){document.getElementById('mob').classList.remove('open')}
-const obs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('v');obs.unobserve(e.target)}})},{threshold:0.1});
-document.querySelectorAll('.fi').forEach(el=>obs.observe(el));
-function inviaForm(){
-  const fn=document.getElementById('fn').value.trim();
-  const fe=document.getElementById('fe').value.trim();
-  if(!fn||!fe){alert('Compila almeno nome ed email.');return}
-  const t=document.getElementById('toast');
+window.addEventListener('scroll', () => {
+  document.getElementById('nb').classList.toggle('scrolled', window.scrollY > 40);
+});
+function toggleMenu() { document.getElementById('mob').classList.toggle('open'); }
+function closeMenu() { document.getElementById('mob').classList.remove('open'); }
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('v'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fi').forEach(el => obs.observe(el));
+function inviaForm() {
+  const fn = document.getElementById('fn').value.trim();
+  const fe = document.getElementById('fe').value.trim();
+  if (!fn || !fe) { alert('Compila almeno nome ed email.'); return; }
+  const t = document.getElementById('toast');
   t.classList.add('show');
-  setTimeout(()=>t.classList.remove('show'),4000);
-  ['fn','fl','fe','ft','fm'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('fa').selectedIndex=0;
+  setTimeout(() => t.classList.remove('show'), 4000);
+  ['fn','fl','fe','ft','fm'].forEach(id => document.getElementById(id).value = '');
+  document.getElementById('fa').selectedIndex = 0;
 }
 </script>
 </body>
