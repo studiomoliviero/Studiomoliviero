@@ -18,6 +18,7 @@
     }
     html { scroll-behavior: smooth; }
     body { font-family: 'Jost', sans-serif; font-weight: 300; background: var(--warm-white); color: var(--text); font-size: 16px; line-height: 1.7; }
+
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; background: rgba(253,251,248,0.96); backdrop-filter: blur(8px); border-bottom: 1px solid var(--border); display: flex; align-items: center; justify-content: space-between; padding: 0 5%; height: 68px; transition: box-shadow 0.3s; }
     nav.scrolled { box-shadow: 0 2px 20px rgba(0,0,0,0.08); }
     .nav-logo { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; font-weight: 600; color: var(--navy); letter-spacing: 0.02em; text-decoration: none; }
@@ -32,6 +33,7 @@
     .mobile-menu { display: none; position: fixed; top: 68px; left: 0; right: 0; bottom: 0; background: var(--warm-white); z-index: 99; padding: 2rem 5%; flex-direction: column; gap: 1.5rem; overflow-y: auto; }
     .mobile-menu.open { display: flex; }
     .mobile-menu a { text-decoration: none; color: var(--text); font-size: 1.1rem; font-weight: 400; border-bottom: 1px solid var(--border); padding-bottom: 1rem; }
+
     #home { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; padding: 0 5% 8rem; background: var(--navy-deep); position: relative; overflow: hidden; }
     .hero-bg { position: absolute; inset: 0; background: radial-gradient(ellipse at 70% 30%, rgba(184,151,90,0.10) 0%, transparent 55%), radial-gradient(ellipse at 20% 80%, rgba(122,46,60,0.08) 0%, transparent 50%), linear-gradient(160deg, #1a2133 0%, #0d1320 60%, #111827 100%); }
     .hero-line { position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold), var(--burgundy), transparent); opacity: 0.5; }
@@ -56,10 +58,12 @@
     .btn-primary:hover { background: var(--gold-light); }
     .btn-ghost { border: 1px solid rgba(255,255,255,0.25); color: rgba(255,255,255,0.75); padding: 0.85rem 2rem; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase; font-weight: 400; transition: border-color 0.25s, color 0.25s; display: inline-block; }
     .btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
     .strip { background: var(--navy); padding: 3rem 5%; display: flex; gap: 3rem; flex-wrap: wrap; justify-content: center; }
     .strip-item { text-align: center; flex: 1; min-width: 140px; max-width: 200px; }
     .strip-num { font-family: 'Cormorant Garamond', serif; font-size: 2.8rem; font-weight: 300; color: var(--gold); line-height: 1; }
     .strip-label { color: rgba(255,255,255,0.5); font-size: 0.75rem; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 0.4rem; }
+
     section { padding: 6rem 5%; }
     .studio-section { padding: 6rem 5%; }
     .studio-section-alt { padding: 6rem 5%; background: var(--cream); }
@@ -73,6 +77,7 @@
     .divider-gold { background: var(--gold); }
     .divider-red { background: var(--burgundy); }
     .lead { font-size: 1.05rem; color: var(--muted); max-width: 640px; line-height: 1.9; }
+
     #servizi-commercialista { background: var(--cream); }
     #servizi-legale { background: #f5f0f1; }
     .area-header { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 3rem; }
@@ -81,6 +86,7 @@
     .area-badge-red { background: var(--burgundy); color: #fff; }
     .area-title { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 400; color: var(--navy); }
     .area-sub { font-size: 0.82rem; color: var(--muted); margin-top: 0.2rem; }
+
     .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(270px, 1fr)); gap: 1.5px; background: var(--border); margin-top: 3rem; }
     .service-card { background: var(--warm-white); padding: 2.2rem; transition: background 0.25s; }
     .service-card:hover { background: #fff; }
@@ -93,11 +99,14 @@
     .service-list li { font-size: 0.8rem; color: var(--muted); padding: 0.18rem 0 0.18rem 1rem; position: relative; }
     .li-gold::before { content: '—'; position: absolute; left: 0; color: var(--gold); }
     .li-red::before { content: '—'; position: absolute; left: 0; color: var(--burgundy-light); }
+
     .souls-divider { background: var(--navy-deep); padding: 2.5rem 5%; display: flex; align-items: center; justify-content: center; gap: 3rem; flex-wrap: wrap; }
     .souls-divider-item { text-align: center; }
     .souls-divider-label { font-size: 0.65rem; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.3rem; }
     .souls-divider-name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: #fff; font-weight: 300; }
     .souls-divider-role { font-size: 0.72rem; color: rgba(255,255,255,0.4); margin-top: 0.2rem; }
+    .souls-divider-sep { width: 1px; height: 60px; background: rgba(255,255,255,0.1); }
+
     .studio-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: center; }
     .studio-visual { position: relative; }
     .studio-photo { width: 100%; aspect-ratio: 3/4; max-height: 500px; display: flex; align-items: center; justify-content: center; font-family: 'Cormorant Garamond', serif; font-size: 4rem; font-weight: 300; position: relative; overflow: hidden; }
@@ -114,6 +123,7 @@
     .bq-red { border-color: var(--burgundy); }
     .credentials { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1.8rem; }
     .credential-tag { border: 1px solid var(--border); font-size: 0.7rem; letter-spacing: 0.08em; text-transform: uppercase; padding: 0.3rem 0.7rem; color: var(--muted); }
+
     #staff { background: var(--navy-deep); }
     .staff-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2rem; margin-top: 3rem; }
     .staff-card { text-align: center; }
@@ -127,6 +137,7 @@
     .sr-red { color: var(--burgundy-light); }
     .sr-neutral { color: rgba(255,255,255,0.4); }
     .staff-bio { font-size: 0.83rem; color: rgba(255,255,255,0.4); margin-top: 0.75rem; line-height: 1.7; }
+
     #perche { background: var(--cream); }
     .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 2rem; margin-top: 3rem; }
     .why-card { border: 1px solid var(--border); padding: 2rem; background: var(--warm-white); transition: border-color 0.3s; }
@@ -134,6 +145,7 @@
     .why-num { font-family: 'Cormorant Garamond', serif; font-size: 3rem; font-weight: 300; color: var(--gold); opacity: 0.35; line-height: 1; }
     .why-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--navy); margin-top: 0.5rem; margin-bottom: 0.75rem; }
     .why-text { font-size: 0.88rem; color: var(--muted); line-height: 1.8; }
+
     .contatti-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: start; }
     .contact-info-item { display: flex; gap: 1.2rem; margin-bottom: 1.8rem; align-items: flex-start; }
     .contact-icon { width: 36px; height: 36px; flex-shrink: 0; background: var(--cream); display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: 1rem; }
@@ -156,6 +168,7 @@
     .form-note { font-size: 0.7rem; color: var(--muted); margin-top: 0.75rem; text-align: center; }
     .map-embed { margin-top: 2rem; }
     .map-embed iframe { width: 100%; height: 200px; border: none; filter: grayscale(30%); }
+
     footer { background: var(--navy-deep); color: rgba(255,255,255,0.4); padding: 2.5rem 5%; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem; border-top: 1px solid rgba(184,151,90,0.15); }
     .footer-brand { font-family: 'Cormorant Garamond', serif; color: rgba(255,255,255,0.7); font-size: 1rem; }
     .footer-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; color: rgba(255,255,255,0.3); font-size: 0.85rem; }
@@ -163,10 +176,12 @@
     .footer-links a { color: rgba(255,255,255,0.35); font-size: 0.75rem; text-decoration: none; transition: color 0.2s; }
     .footer-links a:hover { color: var(--gold); }
     .footer-copy { font-size: 0.72rem; }
+
     #toast { position: fixed; bottom: 2rem; right: 2rem; z-index: 999; background: var(--navy); color: #fff; padding: 1rem 1.5rem; font-size: 0.85rem; transform: translateY(100px); opacity: 0; transition: all 0.4s; border-left: 3px solid var(--gold); pointer-events: none; }
     #toast.show { transform: translateY(0); opacity: 1; }
     .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.7s ease, transform 0.7s ease; }
     .fade-in.visible { opacity: 1; transform: translateY(0); }
+
     @media (max-width: 900px) {
       .studio-grid, .contatti-grid { grid-template-columns: 1fr; gap: 3rem; }
       .studio-badge { right: 0; }
@@ -174,6 +189,7 @@
       .nav-links { display: none; }
       .hamburger { display: flex; }
       .hero-souls { grid-template-columns: 1fr; max-width: 340px; }
+      .souls-divider-sep { display: none; }
     }
     @media (max-width: 600px) {
       #home { padding-bottom: 5rem; }
@@ -183,6 +199,7 @@
   </style>
 </head>
 <body>
+
 <nav id="navbar">
   <a href="#home" class="nav-logo">Studio <span>Oliviero</span></a>
   <ul class="nav-links">
@@ -192,7 +209,9 @@
     <li><a href="#staff">Staff</a></li>
     <li><a href="#contatti" class="nav-cta">Contatti</a></li>
   </ul>
-  <div class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  <div class="hamburger" id="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
   <a href="#servizi-commercialista" onclick="closeMenu()">Area Commercialistica</a>
@@ -201,8 +220,11 @@
   <a href="#staff" onclick="closeMenu()">Staff</a>
   <a href="#contatti" onclick="closeMenu()">Contatti</a>
 </div>
+
 <section id="home">
-  <div class="hero-bg"></div><div class="hero-line"></div><div class="hero-pattern"></div>
+  <div class="hero-bg"></div>
+  <div class="hero-line"></div>
+  <div class="hero-pattern"></div>
   <div class="hero-content">
     <div class="hero-eyebrow">Serravalle Scrivia — Provincia di Alessandria</div>
     <h1 class="hero-title">Un unico studio.<br>Due <em>competenze</em><br>al vostro fianco.</h1>
@@ -216,7 +238,7 @@
       <div class="hero-soul">
         <div class="soul-label red">Area Legale</div>
         <div class="soul-name">Avv. Silvia Melissa Maria Oliviero</div>
-        <div class="soul-role">Avvocato · Diritto Civile · Penale · Lavoro</div>
+        <div class="soul-role">Avvocato · Diritto Civile · Penale · Lavoro · Tributario</div>
       </div>
     </div>
     <div class="hero-actions">
@@ -225,16 +247,21 @@
     </div>
   </div>
 </section>
+
 <div class="strip">
   <div class="strip-item fade-in"><div class="strip-num">1962</div><div class="strip-label">Anno di fondazione</div></div>
   <div class="strip-item fade-in"><div class="strip-num">60+</div><div class="strip-label">Anni di esperienza</div></div>
   <div class="strip-item fade-in"><div class="strip-num">2</div><div class="strip-label">Aree di competenza</div></div>
   <div class="strip-item fade-in"><div class="strip-num">360°</div><div class="strip-label">Consulenza integrata</div></div>
 </div>
+
 <section id="servizi-commercialista">
   <div class="area-header fade-in">
     <div class="area-badge area-badge-gold">M.O.</div>
-    <div><div class="area-title">Area Commercialistica</div><div class="area-sub">Prof. Dott. Marco Oliviero — Dottore Commercialista e Revisore Legale</div></div>
+    <div>
+      <div class="area-title">Area Commercialistica</div>
+      <div class="area-sub">Prof. Dott. Marco Oliviero — Dottore Commercialista e Revisore Legale</div>
+    </div>
   </div>
   <div class="section-eyebrow eyebrow-gold fade-in">Fiscalità · Contabilità · Società</div>
   <h2 class="section-title fade-in">Consulenza <span class="em-gold">fiscale e societaria</span></h2>
@@ -249,19 +276,24 @@
     <div class="service-card fade-in"><div class="service-icon icon-gold">◇</div><div class="service-title">Privati e Patrimonio</div><p class="service-text">Pianificazione fiscale e patrimoniale, successioni, donazioni e monitoraggio degli investimenti.</p><ul class="service-list"><li class="li-gold">Successioni e dichiarazioni di successione</li><li class="li-gold">Pianificazione patrimoniale</li><li class="li-gold">Quadro RW e monitoraggio fiscale</li><li class="li-gold">Agevolazioni prima casa e ristrutturazioni</li></ul></div>
   </div>
 </section>
+
 <div class="souls-divider" style="background: linear-gradient(135deg, #5a1e2a 0%, #7a2e3c 40%, #3d1520 100%); padding: 3.5rem 5%;">
   <div class="souls-divider-item">
     <div class="souls-divider-label" style="color:rgba(255,255,255,0.5)">A seguire</div>
     <div class="souls-divider-name" style="font-size:1.5rem;">Avv. Silvia Melissa Maria Oliviero</div>
-    <div class="souls-divider-role" style="color:rgba(255,255,255,0.6); font-size:0.85rem; margin-top:0.4rem;">Avvocato · Diritto Civile · Diritto Penale · Diritto del Lavoro</div>
+    <div class="souls-divider-role" style="color:rgba(255,255,255,0.6); font-size:0.85rem; margin-top:0.4rem;">Avvocato · Diritto Civile · Diritto Penale · Diritto del Lavoro · Diritto Tributario</div>
   </div>
 </div>
+
 <section id="servizi-legale">
   <div class="area-header fade-in">
     <div class="area-badge area-badge-red">S.O.</div>
-    <div><div class="area-title">Area Legale</div><div class="area-sub">Avv. Silvia Melissa Maria Oliviero — Diritto Civile, Penale e del Lavoro</div></div>
+    <div>
+      <div class="area-title">Area Legale</div>
+      <div class="area-sub">Avv. Silvia Melissa Maria Oliviero — Diritto Civile, Penale, del Lavoro e Tributario</div>
+    </div>
   </div>
-  <div class="section-eyebrow eyebrow-red fade-in">Civile · Penale · Lavoro</div>
+  <div class="section-eyebrow eyebrow-red fade-in">Civile · Penale · Lavoro · Tributario</div>
   <h2 class="section-title fade-in">Assistenza <span class="em-red">legale e giudiziale</span></h2>
   <div class="divider divider-red fade-in"></div>
   <p class="lead fade-in">Tutela dei diritti di privati e imprese nelle sedi giudiziarie e stragiudiziali — con un approccio orientato alla concretezza, alla chiarezza e alla difesa efficace degli interessi del cliente.</p>
@@ -272,8 +304,10 @@
     <div class="service-card fade-in"><div class="service-icon icon-red">◻</div><div class="service-title">Mediazione e Stragiudiziale</div><p class="service-text">Gestione delle controversie prima del giudizio: trattative, accordi transattivi e mediazione obbligatoria.</p><ul class="service-list"><li class="li-red">Mediazione civile e commerciale</li><li class="li-red">Negoziazione assistita</li><li class="li-red">Accordi transattivi</li><li class="li-red">Diffide e messe in mora</li></ul></div>
     <div class="service-card fade-in"><div class="service-icon icon-red">▽</div><div class="service-title">Diritto di Famiglia</div><p class="service-text">Assistenza nelle vicende familiari — separazioni, divorzi, affidamento dei figli e mantenimento.</p><ul class="service-list"><li class="li-red">Separazione e divorzio</li><li class="li-red">Affidamento e mantenimento figli</li><li class="li-red">Accordi prematrimoniali</li><li class="li-red">Unioni civili e convivenze</li></ul></div>
     <div class="service-card fade-in"><div class="service-icon icon-red">◁</div><div class="service-title">Consulenza Legale d'Impresa</div><p class="service-text">Supporto legale continuativo per imprenditori — in piena sinergia con l'area commercialistica dello studio.</p><ul class="service-list"><li class="li-red">Contrattualistica commerciale</li><li class="li-red">Recupero crediti</li><li class="li-red">Responsabilità degli amministratori</li><li class="li-red">Tutela della proprietà intellettuale</li></ul></div>
+    <div class="service-card fade-in"><div class="service-icon icon-red">⊛</div><div class="service-title">Diritto Tributario</div><p class="service-text">Assistenza legale nelle controversie con il Fisco — in stretta sinergia con l'area commercialistica dello Studio per una difesa coordinata e completa.</p><ul class="service-list"><li class="li-red">Ricorsi tributari in Commissione Tributaria</li><li class="li-red">Accertamenti e cartelle esattoriali</li><li class="li-red">Contenzioso IVA, IRPEF, IRES</li><li class="li-red">Accordi e definizioni agevolate</li></ul></div>
   </div>
 </section>
+
 <div class="studio-section" id="professionisti">
   <div class="studio-grid">
     <div class="studio-visual fade-in">
@@ -295,6 +329,7 @@
     </div>
   </div>
 </div>
+
 <div class="studio-section-alt">
   <div class="studio-grid">
     <div>
@@ -309,6 +344,7 @@
         <span class="credential-tag">Diritto Civile</span>
         <span class="credential-tag">Diritto Penale</span>
         <span class="credential-tag">Diritto del Lavoro</span>
+        <span class="credential-tag">Diritto Tributario</span>
       </div>
     </div>
     <div class="studio-visual fade-in">
@@ -317,37 +353,71 @@
     </div>
   </div>
 </div>
+
 <section id="staff">
   <div class="section-eyebrow fade-in" style="color:var(--gold-light)">Il team</div>
   <h2 class="section-title fade-in" style="color:#fff">Il nostro <span class="em-gold">staff</span></h2>
   <div class="divider divider-gold fade-in"></div>
   <p class="lead fade-in" style="color:rgba(255,255,255,0.45)">Professionisti qualificati che collaborano in sinergia — nel solco di una tradizione di eccellenza che dura da oltre sessant'anni.</p>
   <div class="staff-grid">
-    <div class="staff-card fade-in"><div class="staff-photo sp-gold">M.O.</div><div class="staff-name">Prof. Dott. Marco Oliviero</div><div class="staff-role sr-gold">Dottore Commercialista · Revisore Legale</div><p class="staff-bio">Responsabile dell'area fiscale, societaria e della revisione legale dei conti.</p></div>
-    <div class="staff-card fade-in"><div class="staff-photo sp-red">S.O.</div><div class="staff-name">Avv. Silvia Melissa Maria Oliviero</div><div class="staff-role sr-red">Avvocato · Diritto Civile · Penale · Lavoro</div><p class="staff-bio">Responsabile dell'area legale — assistenza giudiziale e stragiudiziale.</p></div>
-    <div class="staff-card fade-in"><div class="staff-photo sp-neutral">C.</div><div class="staff-name">Collaboratore</div><div class="staff-role sr-neutral">Contabilità e Adempimenti</div><p class="staff-bio">Tenuta della contabilità, dichiarazioni fiscali e gestione degli adempimenti periodici.</p></div>
+    <div class="staff-card fade-in">
+      <div class="staff-photo sp-gold">M.O.</div>
+      <div class="staff-name">Prof. Dott. Marco Oliviero</div>
+      <div class="staff-role sr-gold">Dottore Commercialista · Revisore Legale</div>
+      <p class="staff-bio">Responsabile dell'area fiscale, societaria e della revisione legale dei conti.</p>
+    </div>
+    <div class="staff-card fade-in">
+      <div class="staff-photo sp-red">S.O.</div>
+      <div class="staff-name">Avv. Silvia Melissa Maria Oliviero</div>
+      <div class="staff-role sr-red">Avvocato · Civile · Penale · Lavoro · Tributario</div>
+      <p class="staff-bio">Responsabile dell'area legale — assistenza giudiziale e stragiudiziale.</p>
+    </div>
+    <div class="staff-card fade-in">
+      <div class="staff-photo sp-neutral">C.</div>
+      <div class="staff-name">Collaboratore</div>
+      <div class="staff-role sr-neutral">Contabilità e Adempimenti</div>
+      <p class="staff-bio">Tenuta della contabilità, dichiarazioni fiscali e gestione degli adempimenti periodici.</p>
+    </div>
   </div>
 </section>
+
 <section id="perche">
   <div class="section-eyebrow eyebrow-gold fade-in">Il vantaggio</div>
   <h2 class="section-title fade-in">Perché scegliere <span class="em-gold">Studio Oliviero</span></h2>
   <div class="divider divider-gold fade-in"></div>
   <div class="why-grid">
-    <div class="why-card fade-in"><div class="why-num">01</div><div class="why-title">Una storia lunga 60 anni</div><p class="why-text">Fondato nel 1962, lo Studio Oliviero è una delle realtà professionali più radicate della provincia di Alessandria. Decenni di esperienza al servizio di imprenditori, famiglie e professionisti del territorio.</p></div>
-    <div class="why-card fade-in"><div class="why-num">02</div><div class="why-title">Consulenza davvero integrata</div><p class="why-text">Fiscale e legale sotto lo stesso tetto. Le questioni al confine tra i due ambiti — contratti, controversie societarie, diritto del lavoro — trovano qui una risposta coordinata e coerente.</p></div>
-    <div class="why-card fade-in"><div class="why-num">03</div><div class="why-title">Aggiornamento continuo</div><p class="why-text">La normativa fiscale e quella giuridica cambiano rapidamente. Lo Studio garantisce formazione costante e monitoraggio proattivo delle novità che possono interessare i clienti.</p></div>
-    <div class="why-card fade-in"><div class="why-num">04</div><div class="why-title">Risposta rapida e diretta</div><p class="why-text">Un rapporto personale con il proprio professionista di riferimento. Nessun rimbalzo tra uffici — comunicazione chiara e tempi di risposta certi.</p></div>
+    <div class="why-card fade-in">
+      <div class="why-num">01</div>
+      <div class="why-title">Una storia lunga 60 anni</div>
+      <p class="why-text">Fondato nel 1962, lo Studio Oliviero è una delle realtà professionali più radicate della provincia di Alessandria. Decenni di esperienza al servizio di imprenditori, famiglie e professionisti del territorio.</p>
+    </div>
+    <div class="why-card fade-in">
+      <div class="why-num">02</div>
+      <div class="why-title">Consulenza davvero integrata</div>
+      <p class="why-text">Fiscale e legale sotto lo stesso tetto. Le questioni al confine tra i due ambiti — contratti, controversie societarie, diritto del lavoro — trovano qui una risposta coordinata e coerente.</p>
+    </div>
+    <div class="why-card fade-in">
+      <div class="why-num">03</div>
+      <div class="why-title">Aggiornamento continuo</div>
+      <p class="why-text">La normativa fiscale e quella giuridica cambiano rapidamente. Lo Studio garantisce formazione costante e monitoraggio proattivo delle novità che possono interessare i clienti.</p>
+    </div>
+    <div class="why-card fade-in">
+      <div class="why-num">04</div>
+      <div class="why-title">Risposta rapida e diretta</div>
+      <p class="why-text">Un rapporto personale con il proprio professionista di riferimento. Nessun rimbalzo tra uffici — comunicazione chiara e tempi di risposta certi.</p>
+    </div>
   </div>
 </section>
+
 <section id="contatti">
   <div class="contatti-grid">
     <div>
       <div class="section-eyebrow eyebrow-gold fade-in">Dove siamo</div>
       <h2 class="section-title fade-in">Vieni a <span class="em-gold">trovarci</span></h2>
       <div class="divider divider-gold fade-in"></div>
-      <div class="contact-info-item fade-in"><div class="contact-icon">📍</div><div><div class="contact-label">Indirizzo</div><div class="contact-value">Via [Da completare]<br>15069 Serravalle Scrivia (AL)</div></div></div>
-      <div class="contact-info-item fade-in"><div class="contact-icon">📞</div><div><div class="contact-label">Telefono</div><div class="contact-value"><a href="tel:+390143000000">0143 000 000</a></div></div></div>
-      <div class="contact-info-item fade-in"><div class="contact-icon">✉</div><div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:info@studiooliviero.it">info@studiooliviero.it</a></div></div></div>
+      <div class="contact-info-item fade-in"><div class="contact-icon">📍</div><div><div class="contact-label">Indirizzo</div><div class="contact-value">Viale Martiri della Benedicta, 145<br>15069 Serravalle Scrivia (AL)</div></div></div>
+      <div class="contact-info-item fade-in"><div class="contact-icon">📞</div><div><div class="contact-label">Telefono</div><div class="contact-value"><a href="tel:+390143062396">0143 62396</a> &nbsp;·&nbsp; <a href="tel:+390143062951">0143 62951</a><br><a href="tel:+393515389853">+39 351 538 9853</a> <span style="font-size:0.78rem;color:var(--muted)">(cellulare)</span></div></div></div>
+      <div class="contact-info-item fade-in"><div class="contact-icon">✉</div><div><div class="contact-label">Email</div><div class="contact-value"><a href="mailto:studiomoliviero@gmail.com">studiomoliviero@gmail.com</a><br><span style="font-size:0.82rem;color:var(--muted)">marco.oliviero@odcecalessandria.legalmail.it</span></div></div></div>
       <div class="contact-info-item fade-in"><div class="contact-icon">⏱</div><div><div class="contact-label">Orari</div><table class="orari-table"><tr><td>Lunedì – Venerdì</td><td>9:00 – 12:30 / 14:30 – 18:00</td></tr><tr><td>Sabato</td><td>9:00 – 12:00 (su appuntamento)</td></tr><tr><td>Domenica</td><td>Chiuso</td></tr></table></div></div>
       <div class="map-embed fade-in"><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d11233.07!2d8.855!3d44.723!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4787d3b0a0c8cde5%3A0x1b2bdf8f0d3f4f4a!2sSerravalle%20Scrivia%2C%20AL!5e0!3m2!1sit!2sit!4v1680000000000" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mappa"></iframe></div>
     </div>
@@ -390,6 +460,7 @@
     </div>
   </div>
 </section>
+
 <footer>
   <div>
     <div class="footer-brand">Studio Oliviero — Commercialisti e Avvocati</div>
@@ -403,7 +474,9 @@
   </div>
   <div class="footer-copy">© 2025 Studio Oliviero · P.IVA [Da completare]<br>15069 Serravalle Scrivia (AL)</div>
 </footer>
+
 <div id="toast">✓ Messaggio inviato. Ti risponderemo entro 24 ore.</div>
+
 <script>
   window.addEventListener('scroll', () => { document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 40); });
   function toggleMenu() { document.getElementById('mobileMenu').classList.toggle('open'); }
@@ -418,10 +491,3 @@
     if (!fname || !femail) { alert('Compila almeno nome ed email.'); return; }
     const toast = document.getElementById('toast');
     toast.classList.add('show');
-    setTimeout(() => toast.classList.remove('show'), 4000);
-    ['fname','lname','femail','fphone','fmsg'].forEach(id => document.getElementById(id).value = '');
-    document.getElementById('ftype').selectedIndex = 0;
-  }
-</script>
-</body>
-</html>
